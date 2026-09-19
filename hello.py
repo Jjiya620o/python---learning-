@@ -1,1 +1,3 @@
-print("Hello, GitHub!") 
+name = "Jiya"
+print("Hello", name)
+print("Welcome to Python!")
