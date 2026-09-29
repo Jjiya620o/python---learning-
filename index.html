@@ -1,180 +1,730 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 
-    <title>My Website ❤️</title>
-.heart {
-    position: fixed;
-    bottom: -20px;
-    font-size: 25px;
-    animation: floatHeart 5s linear infinite;
-}
+    <meta charset="UTF-8">
 
-@keyframes floatHeart {
-    from {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    to {
-        transform: translateY(-100vh);
-        opacity: 0;
-    }
-}
+    <title>For My Favourite One ❤️</title>
+
+
     <style>
 
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, pink, hotpink);
+        * {
+            box-sizing: border-box;
         }
 
-        .box {
-            background: rgba(255,255,255,0.2);
-            padding: 40px 25px;
-            border-radius: 25px;
-            width: 80%;
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            font-family: Arial, sans-serif;
+
+            background:
+            linear-gradient(
+                135deg,
+                #ff758c,
+                #ff7eb3,
+                #c471ed
+            );
+
+            color: white;
+
+            overflow-x: hidden;
+
         }
+
+
+        .screen {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 25px;
+
+            text-align: center;
+
+        }
+
+
+        .card {
+
+            width: 92%;
+
+            max-width: 650px;
+
+            padding: 35px 25px;
+
+            border-radius: 30px;
+
+            background:
+            rgba(255,255,255,0.18);
+
+            backdrop-filter: blur(12px);
+
+            box-shadow:
+            0 15px 40px
+            rgba(0,0,0,0.25);
+
+            animation: appear 1.5s ease;
+
+        }
+
+
+        @keyframes appear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                scale(0.7);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                scale(1);
+
+            }
+
+        }
+
 
         h1 {
-            color: white;
-            font-size: 36px;
+
+            font-size: 32px;
+
+            margin-bottom: 20px;
+
         }
+
+
+        h2 {
+
+            font-size: 28px;
+
+            margin: 20px 0;
+
+        }
+
 
         p {
-            color: white;
-            font-size: 20px;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
         }
+
 
         button {
-            padding: 15px 35px;
+
             border: none;
+
+            padding: 15px 30px;
+
+            margin: 10px;
+
             border-radius: 30px;
+
             background: white;
-            color: hotpink;
-            font-size: 18px;
+
+            color: #ff4f81;
+
+            font-size: 17px;
+
             font-weight: bold;
-            margin-top: 15px;
+
+            cursor: pointer;
+
+            box-shadow:
+            0 5px 15px
+            rgba(0,0,0,0.2);
+
         }
 
-        #second, #third {
+
+        button:active {
+
+            transform: scale(0.93);
+
+        }
+
+
+        .hidden {
+
             display: none;
+
         }
 
-        .photo {
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid white;
-    box-shadow: 0 0 25px white;
-    animation: photoZoom 2s infinite alternate;
-}
 
-@keyframes photoZoom {
-    from {
-        transform: scale(1);
-    }
+        .message {
 
-    to {
-        transform: scale(1.08);
-    }
-}
+            text-align: left;
+
+            padding: 20px;
+
+            margin-top: 20px;
+
+            border-radius: 20px;
+
+            background:
+            rgba(255,255,255,0.12);
+
+        }
+
+
+        .birthday {
+
+            font-size: 28px;
+
+            font-weight: bold;
+
+            animation:
+            birthdayGlow 1.2s
+            infinite alternate;
+
+        }
+
+
+        @keyframes birthdayGlow {
+
+            from {
+
+                transform: scale(1);
+
+            }
+
+            to {
+
+                transform: scale(1.08);
+
+            }
+
+        }
+
+
+        .cake {
+
+            font-size: 80px;
+
+            animation:
+            cakeBounce 1s
+            infinite alternate;
+
+        }
+
+
+        @keyframes cakeBounce {
+
+            from {
+
+                transform:
+                translateY(0);
+
+            }
+
+            to {
+
+                transform:
+                translateY(-12px);
+
+            }
+
+        }
+
+
+        .heart {
+
+            position: fixed;
+
+            bottom: -40px;
+
+            font-size: 25px;
+
+            pointer-events: none;
+
+            animation:
+            floatHeart 6s
+            linear infinite;
+
+            z-index: 10;
+
+        }
+
+
+        @keyframes floatHeart {
+
+            0% {
+
+                transform:
+                translateY(0)
+                rotate(0deg);
+
+                opacity: 1;
+
+            }
+
+            100% {
+
+                transform:
+                translateY(-110vh)
+                rotate(360deg);
+
+                opacity: 0;
+
+            }
+
+        }
+
+
+        .star {
+
+            position: fixed;
+
+            font-size: 18px;
+
+            animation:
+            starMove 5s
+            linear infinite;
+
+            pointer-events: none;
+
+        }
+
+
+        @keyframes starMove {
+
+            0% {
+
+                transform:
+                translateY(100vh);
+
+                opacity: 0;
+
+            }
+
+            30% {
+
+                opacity: 1;
+
+            }
+
+            100% {
+
+                transform:
+                translateY(-20vh);
+
+                opacity: 0;
+
+            }
+
+        }
+
+
+        .typing {
+
+            min-height: 200px;
+
+        }
+
+
+        .small {
+
+            font-size: 14px;
+
+            opacity: 0.85;
+
+        }
 
     </style>
 
 </head>
 
+
 <body>
-    <div class="heart">❤️</div>
 
-    <!-- FIRST SCREEN -->
 
-    <div class="box" id="first">
+    <!-- FLOATING HEARTS -->
 
-        <h1>Hello ❤️</h1>
+    <div class="heart"
+         style="left:10%;animation-delay:0s;">
+        ❤️
+    </div>
 
-        <p>Thank you for visiting my little website ❤️✨</p>
+    <div class="heart"
+         style="left:30%;animation-delay:2s;">
+        💖
+    </div>
 
-        <button onclick="start()">START 💖</button>
+    <div class="heart"
+         style="left:50%;animation-delay:4s;">
+        💕
+    </div>
+
+    <div class="heart"
+         style="left:70%;animation-delay:1s;">
+        💗
+    </div>
+
+    <div class="heart"
+         style="left:90%;animation-delay:3s;">
+        💓
+    </div>
+
+
+    <!-- OPENING SCREEN -->
+
+    <div class="screen"
+         id="opening">
+
+        <div class="card">
+
+            <h1>
+                Hey... 🥺❤️
+            </h1>
+
+            <p>
+                Wait a little... ✨
+            </p>
+
+            <p>
+                I made something
+                special for you 🫂🧿
+            </p>
+
+            <button onclick="openMessage()">
+                OPEN ❤️
+            </button>
+
+        </div>
 
     </div>
 
 
-    <!-- SECOND SCREEN -->
+    <!-- MESSAGE SCREEN -->
 
-    <div class="box" id="second">
+    <div class="screen hidden"
+         id="messageScreen">
 
-        <h1>Yay! 🎉</h1>
+        <div class="card">
 
-        <p>Welcome to the next screen ✨</p>
+            <h1>
+                Hey, my all-time
+                favourite one 🥺🫂🧿
+            </h1>
 
-        <button onclick="next()">NEXT 💕</button>
+            <div class="message">
+
+                <p id="typingText"
+                   class="typing">
+                </p>
+
+            </div>
+
+            <button onclick="showBirthday()">
+                NEXT ✨
+            </button>
+
+            <button onclick="toggleMusic()">
+                🎵 MUSIC
+            </button>
+
+            <audio id="music" loop>
+
+                <source
+                    src="song.mp3"
+                    type="audio/mpeg">
+
+            </audio>
+
+        </div>
 
     </div>
 
 
-    <!-- THIRD SCREEN -->
+    <!-- BIRTHDAY SCREEN -->
 
-    <div class="box" id="third">
+    <div class="screen hidden"
+         id="birthdayScreen">
 
-        <h1>Beautiful Memories ✨</h1>
+        <div class="card">
 
-        <img class="photo" src="Snapchat-777984449.jpg">
+            <div class="cake">
+                🎂
+            </div>
 
-        <p>Every picture tells a little story ❤️</p>
+            <h1 class="birthday">
+                HAPPY BIRTHDAY
+            </h1>
 
-        <button onclick="again()">NEXT 🌸</button>
+            <h2>
+                DARLING ♥️🧿
+            </h2>
+
+            <p>
+                😚 🫂 ❤️
+            </p>
+
+            <p class="birthday">
+                LOVE YOU ❤️ BBY 😚
+            </p>
+
+            <button onclick="showSurprise()">
+                🎁 OPEN YOUR SURPRISE
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SURPRISE SCREEN -->
+
+    <div class="screen hidden"
+         id="surpriseScreen">
+
+        <div class="card">
+
+            <h1>
+                🥺🫂❤️
+            </h1>
+
+            <h2>
+                One last thing...
+            </h2>
+
+            <p>
+                Main hamesha tere saath rahungi,
+                tere har bure waqt mein
+                tera saath dungi 🫂🫂🫂
+            </p>
+
+            <h1>
+                🎉 ❤️ 🎂 ❤️ 🎉
+            </h1>
+
+            <p>
+                You are very special
+                in my life ❤️🤌🏼
+            </p>
+
+            <p class="small">
+                Made with lots of love ❤️✨
+            </p>
+
+        </div>
 
     </div>
 
 
     <script>
 
-        function start() {
 
-            document.getElementById("first").style.display = "none";
+        const message = `
 
-            document.getElementById("second").style.display = "block";
+I know hum daily nahi milte,
+daily baat nahi karte,
+but I miss you always 🥹
+
+Teri jagah koi nahi le sakta.
+
+Aur zyada kuch nahi bolna chahti hu,
+bas tu hamesha mere saath rehna 🤌🏼
+aur hamesha saath dena .....
+
+Aur sorry yrr 😔
+
+Main tere bure waqt par
+tere saath nahi thi.
+
+Us waqt mujhe tere saath hona tha 😔
+
+Yeh baat mujhe hamesha
+regret feel karati hai...
+
+I am very sorry ....
+
+`;
+
+
+        let index = 0;
+
+
+        function openMessage() {
+
+            document
+            .getElementById("opening")
+            .classList
+            .add("hidden");
+
+            document
+            .getElementById("messageScreen")
+            .classList
+            .remove("hidden");
+
+            typeMessage();
 
         }
 
 
-        function next() {
+        function typeMessage() {
 
-            document.getElementById("second").style.display = "none";
+            if (index < message.length) {
 
-            document.getElementById("third").style.display = "block";
+                document
+                .getElementById("typingText")
+                .innerHTML +=
+                message.charAt(index)
+                .replace(/\n/g, "<br>");
+
+                index++;
+
+                setTimeout(
+                    typeMessage,
+                    35
+                );
+
+            }
 
         }
 
 
-        function again() {
+        function showBirthday() {
 
-            alert("More surprises coming soon! ✨");
+            document
+            .getElementById("messageScreen")
+            .classList
+            .add("hidden");
+
+            document
+            .getElementById("birthdayScreen")
+            .classList
+            .remove("hidden");
 
         }
-        function finalScreen() {
-    document.getElementById("third").style.display = "none";
-    document.getElementById("fourth").style.display = "block";
+
+
+        function showSurprise() {
+
+            document
+            .getElementById("birthdayScreen")
+            .classList
+            .add("hidden");
+
+            document
+            .getElementById("surpriseScreen")
+            .classList
+            .remove("hidden");
+
+
+            createConfetti();
+
         }
-function surprise() {
-    alert("Surprise! 🎁❤️ You made it to the end!");
-}
+
+
+        function toggleMusic() {
+
+            const music =
+            document.getElementById("music");
+
+
+            if (music.paused) {
+
+                music.play();
+
+            }
+
+            else {
+
+                music.pause();
+
+            }
+
+        }
+
+
+        function createConfetti() {
+
+            for (
+                let i = 0;
+                i < 35;
+                i++
+            ) {
+
+                const heart =
+                document.createElement("div");
+
+                heart.innerHTML =
+                ["❤️","💖","💕","✨","💗"]
+                [
+                    Math.floor(
+                        Math.random() * 5
+                    )
+                ];
+
+                heart.style.position =
+                "fixed";
+
+                heart.style.left =
+                Math.random() * 100 + "%";
+
+                heart.style.top =
+                "-20px";
+
+                heart.style.fontSize =
+                "25px";
+
+                heart.style.zIndex =
+                "100";
+
+                heart.style.transition =
+                "transform 3s linear, opacity 3s";
+
+                document.body
+                .appendChild(heart);
+
+
+                setTimeout(() => {
+
+                    heart.style.transform =
+                    "translateY(110vh) rotate(360deg)";
+
+                    heart.style.opacity =
+                    "0";
+
+                }, 100);
+
+
+                setTimeout(() => {
+
+                    heart.remove();
+
+                }, 3500);
+
+            }
+
+        }
+
     </script>
-    
 
-    <div class="box" id="fourth">
-        <h1>One More Thing ✨</h1>
-        <p>Yeh website abhi aur bhi special hone wali hai ❤️</p>
-        <button onclick="finalScreen()">NEXT 💖</button>
-    </div>
 
 </body>
+
 </html>
 
