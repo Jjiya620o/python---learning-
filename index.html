@@ -3,7 +3,24 @@
 <head>
 
     <title>My Website ❤️</title>
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 25px;
+    animation: floatHeart 5s linear infinite;
+}
 
+@keyframes floatHeart {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
     <style>
 
         body {
@@ -74,6 +91,7 @@
 </head>
 
 <body>
+    <div class="heart">❤️</div>
 
     <!-- FIRST SCREEN -->
 
