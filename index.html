@@ -41,20 +41,50 @@
             font-size: 18px;
             font-weight: bold;
         }
+
+        #second {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
 
-    <div class="box">
+    <div class="box" id="first">
 
         <h1>Hello ❤️</h1>
 
         <p>Welcome to my little website ✨</p>
 
-        <button>START 💖</button>
+        <button onclick="start()">START 💖</button>
 
     </div>
+
+
+    <div class="box" id="second">
+
+        <h1>Yay! 🎉</h1>
+
+        <p>This is my second screen ✨</p>
+
+        <button onclick="back()">BACK</button>
+
+    </div>
+
+
+    <script>
+
+        function start() {
+            document.getElementById("first").style.display = "none";
+            document.getElementById("second").style.display = "block";
+        }
+
+        function back() {
+            document.getElementById("second").style.display = "none";
+            document.getElementById("first").style.display = "block";
+        }
+
+    </script>
 
 </body>
 </html>
