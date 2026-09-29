@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>My Website ❤️</title>
 
     <style>
+
         body {
             margin: 0;
             height: 100vh;
@@ -24,7 +26,7 @@
 
         h1 {
             color: white;
-            font-size: 38px;
+            font-size: 36px;
         }
 
         p {
@@ -40,15 +42,28 @@
             color: hotpink;
             font-size: 18px;
             font-weight: bold;
+            margin-top: 15px;
         }
 
-        #second {
+        #second, #third {
             display: none;
         }
+
+        .photo {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+        }
+
     </style>
+
 </head>
 
 <body>
+
+    <!-- FIRST SCREEN -->
 
     <div class="box" id="first">
 
@@ -61,13 +76,31 @@
     </div>
 
 
+    <!-- SECOND SCREEN -->
+
     <div class="box" id="second">
 
         <h1>Yay! 🎉</h1>
 
-        <p>This is my second screen ✨</p>
+        <p>Welcome to the next screen ✨</p>
 
-        <button onclick="back()">BACK</button>
+        <button onclick="next()">NEXT 💕</button>
+
+    </div>
+
+
+    <!-- THIRD SCREEN -->
+
+    <div class="box" id="third">
+
+        <h1>Beautiful Memories ✨</h1>
+
+        <img class="photo"
+        src="https://picsum.photos/300">
+
+        <p>Every picture tells a little story ❤️</p>
+
+        <button onclick="again()">NEXT 🌸</button>
 
     </div>
 
@@ -75,13 +108,27 @@
     <script>
 
         function start() {
+
             document.getElementById("first").style.display = "none";
+
             document.getElementById("second").style.display = "block";
+
         }
 
-        function back() {
+
+        function next() {
+
             document.getElementById("second").style.display = "none";
-            document.getElementById("first").style.display = "block";
+
+            document.getElementById("third").style.display = "block";
+
+        }
+
+
+        function again() {
+
+            alert("More surprises coming soon! ✨");
+
         }
 
     </script>
