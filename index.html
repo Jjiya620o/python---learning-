@@ -4,340 +4,374 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A Little Surprise ❤️</title>
+<title>For My Favourite Person ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Dancing+Script:wght@500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<!-- Beautiful Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    min-height:100vh;
-    overflow:hidden;
+body {
+    min-height: 100vh;
     background:
-    radial-gradient(circle at top left,#54245f 0%,transparent 35%),
-    radial-gradient(circle at bottom right,#8b315f 0%,transparent 35%),
-    linear-gradient(135deg,#170d20,#28112d,#180b22);
-    color:white;
+        radial-gradient(circle at top left, #8e3d68, transparent 35%),
+        radial-gradient(circle at bottom right, #4d315f, transparent 35%),
+        linear-gradient(135deg, #160d20, #281329, #130b1b);
+
+    color: white;
+    overflow-x: hidden;
+    font-family: "Cormorant Garamond", serif;
 }
 
-/* Floating hearts */
+/* Floating Hearts */
 
-.heart{
-    position:fixed;
-    bottom:-30px;
-    font-size:22px;
-    opacity:.7;
-    animation:floatHeart 8s linear infinite;
-    pointer-events:none;
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 22px;
+    animation: floatHeart linear infinite;
+    opacity: 0.7;
+    z-index: 0;
 }
 
-.heart:nth-child(1){left:8%;animation-delay:1s;}
-.heart:nth-child(2){left:22%;animation-delay:3s;}
-.heart:nth-child(3){left:45%;animation-delay:0s;}
-.heart:nth-child(4){left:68%;animation-delay:2s;}
-.heart:nth-child(5){left:88%;animation-delay:4s;}
+@keyframes floatHeart {
 
-@keyframes floatHeart{
-    0%{
-        transform:translateY(0) rotate(0deg);
-        opacity:0;
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
     }
 
-    15%{
-        opacity:.8;
+    20% {
+        opacity: 0.8;
     }
 
-    100%{
-        transform:translateY(-110vh) rotate(360deg);
-        opacity:0;
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
     }
 }
 
 /* Sparkles */
 
-.sparkle{
-    position:fixed;
-    color:white;
-    animation:twinkle 2s infinite alternate;
-    pointer-events:none;
+.sparkle {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    animation: sparkleAnim 2s infinite alternate;
+    opacity: 0.6;
 }
 
-.s1{top:15%;left:12%;}
-.s2{top:30%;right:15%;animation-delay:.5s;}
-.s3{bottom:20%;left:18%;animation-delay:1s;}
-.s4{bottom:30%;right:10%;animation-delay:1.5s;}
+@keyframes sparkleAnim {
 
-@keyframes twinkle{
-    from{
-        opacity:.2;
-        transform:scale(.7);
+    from {
+        transform: scale(0.5);
+        opacity: 0.2;
     }
 
-    to{
-        opacity:1;
-        transform:scale(1.3);
+    to {
+        transform: scale(1.5);
+        opacity: 1;
     }
 }
 
 /* Screens */
 
-.screen{
-    display:none;
-    min-height:100vh;
-    align-items:center;
-    justify-content:center;
-    padding:25px;
-    text-align:center;
+.screen {
+    min-height: 100vh;
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    text-align: center;
+
+    position: relative;
+    z-index: 2;
 }
 
-.screen.active{
-    display:flex;
+.active {
+    display: flex;
 }
 
-/* Main box */
+/* Main Box */
 
-.box{
-    width:min(90%,600px);
-    padding:35px 25px;
-    border-radius:28px;
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,.18);
-    box-shadow:0 20px 60px rgba(0,0,0,.35);
-    animation:fadeUp 1s ease;
+.box {
+    width: min(92%, 600px);
+
+    padding: 40px 25px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.4),
+        inset 0 0 30px rgba(255,255,255,0.03);
 }
 
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
+/* Headings */
 
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(30px, 7vw, 52px);
+
+    margin-bottom: 18px;
 }
 
-.mini{
-    font-family:"Cormorant Garamond",serif;
-    font-size:18px;
-    letter-spacing:3px;
-    opacity:.8;
-    margin-bottom:15px;
-}
+.subtitle {
+    font-size: 20px;
 
-.title{
-    font-family:"Playfair Display",serif;
-    font-size:38px;
-    margin-bottom:18px;
-}
+    opacity: 0.9;
 
-.subtitle{
-    font-family:"Cormorant Garamond",serif;
-    font-size:22px;
-    line-height:1.5;
-    opacity:.9;
+    margin-bottom: 30px;
 }
 
 /* Buttons */
 
-button{
-    margin-top:28px;
-    padding:13px 30px;
-    border:none;
-    border-radius:30px;
-    background:linear-gradient(135deg,#ff8fb8,#d95c91);
-    color:white;
-    font-size:17px;
-    font-family:"Cormorant Garamond",serif;
-    cursor:pointer;
-    box-shadow:0 8px 25px rgba(255,105,160,.3);
-    transition:.3s;
+button {
+    border: none;
+
+    padding: 14px 30px;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #ff7eb3,
+        #ff4f91
+    );
+
+    color: white;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 25px rgba(255,80,150,0.35);
+
+    transition: 0.3s;
 }
 
-button:hover{
-    transform:scale(1.06);
+button:hover {
+    transform: translateY(-3px) scale(1.03);
 }
 
-/* Photo */
+/* Photo Screen */
 
-.photo-box{
-    width:min(90%,520px);
-    animation:fadeUp 1s ease;
+.photo-title {
+    font-family: "Dancing Script", cursive;
+
+    font-size: 38px;
+
+    margin-bottom: 20px;
 }
 
-.photo-number{
-    font-family:"Playfair Display",serif;
-    letter-spacing:4px;
-    font-size:14px;
-    opacity:.8;
-    margin-bottom:20px;
-}
+/* Polaroid */
 
-.polaroid{
-    background:white;
-    padding:12px 12px 50px;
-    width:min(85vw,380px);
-    margin:auto;
+.photo-box {
+    display: inline-block;
+
+    background: white;
+
+    padding: 12px 12px 25px;
+
+    border-radius: 5px;
+
     box-shadow:
-    0 20px 50px rgba(0,0,0,.5),
-    0 0 30px rgba(255,150,200,.15);
+        0 15px 40px rgba(0,0,0,0.5),
+        0 0 30px rgba(255,180,220,0.25);
 
-    transform:rotate(-2deg);
-    animation:photoAppear .8s ease;
+    transform: rotate(-2deg);
+
+    margin-bottom: 20px;
+
+    animation: polaroidFloat 3s ease-in-out infinite;
 }
 
-@keyframes photoAppear{
-    from{
-        opacity:0;
-        transform:scale(.75) rotate(-8deg);
+@keyframes polaroidFloat {
+
+    0%,100% {
+        transform: rotate(-2deg) translateY(0);
     }
 
-    to{
-        opacity:1;
-        transform:scale(1) rotate(-2deg);
+    50% {
+        transform: rotate(2deg) translateY(-8px);
     }
 }
 
-.polaroid img{
-    width:100%;
-    height:360px;
-    object-fit:cover;
-    display:block;
+.photo-box img {
+    width: min(75vw, 330px);
+
+    height: min(75vw, 330px);
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 3px;
+
+    animation: photoAppear 0.8s ease;
 }
 
-.photo-caption{
-    color:#3d2632;
-    font-family:"Dancing Script",cursive;
-    font-size:25px;
-    margin-top:15px;
+@keyframes photoAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.photo-number {
+    font-family: "Playfair Display", serif;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.75;
+
+    margin-bottom: 8px;
+}
+
+.photo-caption {
+    font-family: "Dancing Script", cursive;
+
+    font-size: 25px;
+
+    color: #ffd6e8;
+
+    margin-bottom: 20px;
 }
 
 /* Message */
 
-.message-box{
-    width:min(90%,700px);
-    padding:40px 25px;
-    border-radius:28px;
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,.18);
-    box-shadow:0 20px 60px rgba(0,0,0,.35);
-    animation:fadeUp .8s ease;
+.message-title {
+    font-family: "Dancing Script", cursive;
+
+    font-size: 40px;
+
+    margin-bottom: 25px;
+
+    color: #ffd6e8;
 }
 
-.message-number{
-    font-family:"Playfair Display",serif;
-    font-size:14px;
-    letter-spacing:3px;
-    opacity:.65;
-    margin-bottom:25px;
+.message {
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(24px, 6vw, 34px);
+
+    line-height: 1.55;
+
+    min-height: 170px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 10px;
 }
 
-.message-text{
-    font-family:"Dancing Script",cursive;
-    font-size:30px;
-    line-height:1.55;
-    min-height:150px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    animation:textAppear .6s ease;
+.message.fade {
+    animation: messageFade 0.7s ease;
 }
 
-@keyframes textAppear{
-    from{
-        opacity:0;
-        transform:translateY(15px);
+@keyframes messageFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
     }
 
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.color1{color:#ffd1e1;}
-.color2{color:#ffe0a8;}
-.color3{color:#d8c7ff;}
-.color4{color:#bff4e3;}
-.color5{color:#ffc6c6;}
-.color6{color:#fff1b8;}
-.color7{color:#ffb6d5;}
-.color8{color:#d7d0ff;}
-
-/* Final */
-
-.final-title{
-    font-family:"Playfair Display",serif;
-    font-size:42px;
-    letter-spacing:3px;
-}
-
-.final-subtitle{
-    font-family:"Dancing Script",cursive;
-    font-size:38px;
-    margin-top:8px;
-}
-
-.cake{
-    font-size:65px;
-    animation:cake 1.5s infinite alternate;
-}
-
-@keyframes cake{
-    from{
-        transform:translateY(0);
-    }
-
-    to{
-        transform:translateY(-8px);
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-.final-message{
-    font-family:"Dancing Script",cursive;
-    font-size:27px;
-    line-height:1.5;
-    margin-top:20px;
+/* Final Screen */
+
+.final-title {
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(45px, 11vw, 75px);
+
+    color: #ffd1e4;
+
+    margin-bottom: 20px;
+
+    animation: finalGlow 2s infinite alternate;
+}
+
+@keyframes finalGlow {
+
+    from {
+        text-shadow: 0 0 8px rgba(255,150,200,0.3);
+    }
+
+    to {
+        text-shadow:
+            0 0 15px rgba(255,150,200,0.8),
+            0 0 30px rgba(255,100,180,0.5);
+    }
+}
+
+.final-message {
+    font-family: "Dancing Script", cursive;
+
+    font-size: 30px;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
 }
 
 /* Mobile */
 
-@media(max-width:600px){
+@media (max-width: 500px) {
 
-    .title{
-        font-size:31px;
+    .box {
+        padding: 30px 18px;
     }
 
-    .subtitle{
-        font-size:20px;
+    .photo-box img {
+        width: 270px;
+        height: 270px;
     }
 
-    .polaroid img{
-        height:320px;
+    .message {
+        font-size: 25px;
+        min-height: 200px;
     }
 
-    .message-text{
-        font-size:27px;
-        min-height:180px;
-    }
-
-    .final-title{
-        font-size:32px;
-    }
-
-    .final-subtitle{
-        font-size:34px;
+    .photo-title {
+        font-size: 34px;
     }
 
 }
@@ -345,38 +379,37 @@ button:hover{
 </style>
 </head>
 
+
 <body>
 
-<!-- Floating decorations -->
 
-<div class="heart">❤️</div>
-<div class="heart">🩷</div>
-<div class="heart">🤍</div>
-<div class="heart">💗</div>
-<div class="heart">❤️</div>
+<!-- Floating Decorations -->
 
-<div class="sparkle s1">✦</div>
-<div class="sparkle s2">✧</div>
-<div class="sparkle s3">✦</div>
-<div class="sparkle s4">✧</div>
+<div class="heart" style="left:8%; animation-duration:8s;">❤️</div>
+<div class="heart" style="left:22%; animation-duration:11s;">💗</div>
+<div class="heart" style="left:40%; animation-duration:9s;">💕</div>
+<div class="heart" style="left:60%; animation-duration:12s;">❤️</div>
+<div class="heart" style="left:78%; animation-duration:10s;">💖</div>
+<div class="heart" style="left:90%; animation-duration:13s;">💕</div>
+
+<div class="sparkle" style="left:15%;top:20%;"></div>
+<div class="sparkle" style="left:80%;top:25%;"></div>
+<div class="sparkle" style="left:30%;top:70%;"></div>
+<div class="sparkle" style="left:70%;top:65%;"></div>
 
 
-<!-- START -->
+<!-- ========================= -->
+<!-- START SCREEN -->
+<!-- ========================= -->
 
-<section class="screen active" id="start">
+<section id="startScreen" class="screen active">
 
     <div class="box">
 
-        <div class="mini">
-            A little something for you
-        </div>
-
-        <h1 class="title">
-            For My Favourite Person ❤️
-        </h1>
+        <h1>For My Favourite Person ❤️</h1>
 
         <p class="subtitle">
-            I have something to tell you... 🥺
+            A little surprise is waiting for you...
         </p>
 
         <button onclick="startPhotos()">
@@ -388,29 +421,38 @@ button:hover{
 </section>
 
 
+
+<!-- ========================= -->
 <!-- PHOTO SCREEN -->
+<!-- ========================= -->
 
-<section class="screen" id="photoScreen">
+<section id="photoScreen" class="screen">
 
-    <div class="photo-box">
+    <div class="box">
+
+        <div class="photo-title">
+            Some Special Memories ❤️
+        </div>
 
         <div class="photo-number" id="photoNumber">
             MEMORY 1 / 4
         </div>
 
-        <div class="polaroid">
+        <div class="photo-box">
 
-            <img id="photo"
-                 src="photo1.jpg"
-                 alt="A special memory">
-
-            <div class="photo-caption" id="photoCaption">
-                A little memory of you ❤️
-            </div>
+            <img
+                id="photo"
+                src="Screenshot_20261001_091751.jpg"
+                alt="Special Memory"
+            >
 
         </div>
 
-        <button onclick="nextPhoto()" id="photoButton">
+        <div class="photo-caption" id="photoCaption">
+            A little memory of you ❤️
+        </div>
+
+        <button id="photoButton" onclick="nextPhoto()">
             Continue ♡
         </button>
 
@@ -419,50 +461,46 @@ button:hover{
 </section>
 
 
+
+<!-- ========================= -->
 <!-- MESSAGE SCREEN -->
+<!-- ========================= -->
 
-<section class="screen" id="messageScreen">
-
-    <div class="message-box">
-
-        <div class="message-number" id="messageNumber">
-            01 / 08
-        </div>
-
-        <div class="message-text color1"
-             id="messageText">
-        </div>
-
-        <button onclick="nextMessage()" id="messageButton">
-            Continue ♡
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- FINAL SCREEN -->
-
-<section class="screen" id="finalScreen">
+<section id="messageScreen" class="screen">
 
     <div class="box">
 
-        <div class="cake">
-            🎂
+        <div class="message-title">
+            Something From My Heart ❤️
         </div>
 
-        <h1 class="final-title">
-            HAPPY BIRTHDAY
-        </h1>
+        <div id="message" class="message"></div>
 
-        <h2 class="final-subtitle">
-            DARLING ❤️
-        </h2>
+        <button id="messageButton" onclick="nextMessage()">
+            Continue ♡
+        </button>
 
-        <p class="final-message">
+    </div>
 
-            I am very lucky to have you in my life. 🥺🫂
+</section>
+
+
+
+<!-- ========================= -->
+<!-- FINAL SCREEN -->
+<!-- ========================= -->
+
+<section id="finalScreen" class="screen">
+
+    <div class="box">
+
+        <div class="final-title">
+            HAPPY BIRTHDAY 🎂
+        </div>
+
+        <div class="final-message">
+
+            DARLING ♥️ 🧿 😚 🫂
 
             <br><br>
 
@@ -470,27 +508,38 @@ button:hover{
 
             <br><br>
 
-            🧿 🫂 ❤️ 🎂
+            🫂🫂🫂
 
-        </p>
+        </div>
+
+        <button onclick="showSurprise()">
+            One Last Surprise 💖
+        </button>
 
     </div>
 
 </section>
 
 
+
 <script>
 
 /* =========================
-   ONLY 4 PHOTOS
+   PHOTOS
 ========================= */
 
 const photos = [
+
     "Screenshot_20261001_091751.jpg",
+
     "Snapchat-1783390479.jpg",
+
     "Snapchat-874578704.jpg",
+
     "Screenshot_20261001_092059.jpg"
+
 ];
+
 
 const captions = [
 
@@ -504,83 +553,101 @@ const captions = [
 
 ];
 
+
 let currentPhoto = 0;
 
 
-/* Start */
+/* =========================
+   START
+========================= */
 
-function startPhotos(){
+function startPhotos() {
 
-    document.getElementById("start")
-    .classList.remove("active");
+    document.getElementById("startScreen")
+        .classList.remove("active");
 
     document.getElementById("photoScreen")
-    .classList.add("active");
+        .classList.add("active");
+
+    currentPhoto = 0;
 
     showPhoto();
-
 }
 
 
-/* Show photo */
 
-function showPhoto(){
+/* =========================
+   SHOW PHOTO
+========================= */
+
+function showPhoto() {
 
     const photo =
         document.getElementById("photo");
 
     photo.style.animation = "none";
 
-    setTimeout(function(){
+    setTimeout(function() {
 
         photo.src = photos[currentPhoto];
 
         photo.style.animation =
-            "photoAppear .8s ease";
+            "photoAppear 0.8s ease";
 
-    },50);
+    }, 50);
 
 
     document.getElementById("photoNumber")
-    .innerText =
-        "MEMORY "
-        + (currentPhoto + 1)
-        + " / 4";
+        .innerText =
+        "MEMORY " +
+        (currentPhoto + 1) +
+        " / 4";
 
 
     document.getElementById("photoCaption")
-    .innerText =
+        .innerText =
         captions[currentPhoto];
 
 
-    document.getElementById("photoButton")
-    .innerText =
-        currentPhoto === 3
-        ? "Now read my heart ❤️"
-        : "Continue ♡";
+    if (currentPhoto === 3) {
+
+        document.getElementById("photoButton")
+            .innerText =
+            "Now read my heart ❤️";
+
+    } else {
+
+        document.getElementById("photoButton")
+            .innerText =
+            "Continue ♡";
+
+    }
 
 }
 
 
-/* Next photo */
 
-function nextPhoto(){
+/* =========================
+   NEXT PHOTO
+========================= */
 
-    if(currentPhoto < 3){
+function nextPhoto() {
+
+    if (currentPhoto < 3) {
 
         currentPhoto++;
 
         showPhoto();
 
-    }
-
-    else{
+    } else {
 
         document.getElementById("photoScreen")
-        .classList.remove("active");
+            .classList.remove("active");
 
         document.getElementById("messageScreen")
-        .classList.add("active");
+            .classList.add("active");
+
+        currentMessage = 0;
 
         showMessage();
 
@@ -589,8 +656,9 @@ function nextPhoto(){
 }
 
 
+
 /* =========================
-   MESSAGE
+   YOUR MESSAGE
 ========================= */
 
 const messages = [
@@ -603,150 +671,105 @@ const messages = [
 
 `Or jyda kuch nhi bolna chahti hu bs tu hmesha mere sath rhna 🤌🏼 or hmesha sath dena .....`,
 
-`Or sorry yrr 😔 mai tere bure vkt pr tere sath nhi thi us. Vakt mujhe tere sath hona tha 😔 yah bat mujhe hamesha regret feel krati hai ...`,
+`Or sorry yrr 😔 mai tere bure vkt pr tere sath nhi thi us. Vakt mujhe tere sath hona tha 😔 yah bat mujhe hamesha regret feel krati  hai ...`,
 
 `I am very sorry ....`,
 
 `HAPPY BIRTHDAY 🎂 DARLING ♥️ 🧿 😚 🫂 LOVE YOU ❤️ BBY 😚`,
 
-`Mai hmesha tere sath rhungi tere hr bure vakt pe tera sath dungi 🫂🫂🫂`
+`Mai hmesha tere sath rhungi tere hr bure vakt pe tera sath dungi  🫂🫂🫂`
 
 ];
+
 
 let currentMessage = 0;
 
 
-function showMessage(){
 
-    const text =
-        document.getElementById("messageText");
+/* =========================
+   SHOW MESSAGE
+========================= */
 
-    text.className =
-        "message-text color"
-        + (currentMessage + 1);
+function showMessage() {
 
-    text.innerHTML =
-        messages[currentMessage];
+    const message =
+        document.getElementById("message");
 
 
-    document.getElementById("messageNumber")
-    .innerText =
-        String(currentMessage + 1)
-        .padStart(2,"0")
-        + " / 08";
+    message.classList.remove("fade");
 
 
-    document.getElementById("messageButton")
-    .innerText =
-        currentMessage === 7
-        ? "One Last Surprise ✨"
-        : "Continue ♡";
+    setTimeout(function() {
+
+        message.innerText =
+            messages[currentMessage];
+
+        message.classList.add("fade");
+
+    }, 50);
+
+
+    const button =
+        document.getElementById("messageButton");
+
+
+    if (currentMessage === messages.length - 1) {
+
+        button.innerText =
+            "Finish ❤️";
+
+    } else {
+
+        button.innerText =
+            "Continue ♡";
+
+    }
 
 }
 
 
-/* Next message */
 
-function nextMessage(){
+/* =========================
+   NEXT MESSAGE
+========================= */
 
-    if(currentMessage < 7){
+function nextMessage() {
+
+    if (currentMessage < messages.length - 1) {
 
         currentMessage++;
 
         showMessage();
 
-    }
-
-    else{
+    } else {
 
         document.getElementById("messageScreen")
-        .classList.remove("active");
+            .classList.remove("active");
 
         document.getElementById("finalScreen")
-        .classList.add("active");
-
-        confetti();
+            .classList.add("active");
 
     }
 
 }
 
 
-/* Confetti */
 
-function confetti(){
+/* =========================
+   FINAL SURPRISE
+========================= */
 
-    const symbols =
-        ["❤️","🩷","✨","🎉","💗","🧿"];
+function showSurprise() {
 
-    for(let i=0;i<35;i++){
-
-        const item =
-            document.createElement("div");
-
-        item.innerText =
-            symbols[
-                Math.floor(
-                    Math.random()*symbols.length
-                )
-            ];
-
-        item.style.position = "fixed";
-
-        item.style.left =
-            Math.random()*100 + "%";
-
-        item.style.top = "-30px";
-
-        item.style.fontSize =
-            (15 + Math.random()*20) + "px";
-
-        item.style.zIndex = "999";
-
-        item.style.animation =
-            "fall "
-            + (2 + Math.random()*3)
-            + "s linear forwards";
-
-        document.body.appendChild(item);
-
-        setTimeout(function(){
-
-            item.remove();
-
-        },5000);
-
-    }
+    alert(
+        "No matter what happens, always keep smiling ❤️🧿🫂"
+    );
 
 }
-
-
-const style =
-    document.createElement("style");
-
-style.innerHTML = `
-
-@keyframes fall{
-
-    to{
-
-        transform:
-        translateY(110vh)
-        rotate(720deg);
-
-        opacity:0;
-
-    }
-
-}
-
-`;
-
-document.head.appendChild(style);
 
 </script>
 
 </body>
-            </html>
+   </html>
 
 
