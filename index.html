@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -29,10 +29,14 @@ body {
 
     color: white;
     font-family: "Cormorant Garamond", serif;
+
     overflow-x: hidden;
 }
 
-/* SCREEN */
+
+/* =========================
+   SCREEN
+========================= */
 
 .screen {
     min-height: 100vh;
@@ -42,7 +46,7 @@ body {
     align-items: center;
     justify-content: center;
 
-    padding: 25px;
+    padding: 20px;
 
     text-align: center;
 
@@ -54,12 +58,15 @@ body {
     display: flex;
 }
 
-/* BOX */
+
+/* =========================
+   BOX
+========================= */
 
 .box {
-    width: min(92%, 620px);
+    width: min(94%, 620px);
 
-    padding: 40px 22px;
+    padding: 38px 20px;
 
     border-radius: 30px;
 
@@ -70,11 +77,14 @@ body {
     border: 1px solid rgba(255,255,255,0.18);
 
     box-shadow:
-        0 20px 60px rgba(0,0,0,0.4),
+        0 20px 60px rgba(0,0,0,0.45),
         inset 0 0 30px rgba(255,255,255,0.03);
 }
 
-/* START */
+
+/* =========================
+   START
+========================= */
 
 h1 {
     font-family: "Playfair Display", serif;
@@ -92,7 +102,10 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* BUTTON */
+
+/* =========================
+   BUTTON
+========================= */
 
 button {
     border: none;
@@ -126,7 +139,10 @@ button:hover {
     transform: translateY(-3px) scale(1.03);
 }
 
-/* PHOTO */
+
+/* =========================
+   PHOTO TITLE
+========================= */
 
 .photo-title {
     font-family: "Dancing Script", cursive;
@@ -150,21 +166,34 @@ button:hover {
     margin-bottom: 12px;
 }
 
-/* POLAROID */
+
+/* =========================
+   PHOTO FRAME
+========================= */
 
 .photo-box {
-    display: inline-block;
+
+    width: 330px;
+    height: 400px;
 
     background: white;
 
-    padding: 12px 12px 25px;
+    padding: 10px;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
-    margin-bottom: 20px;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    overflow: hidden;
 
     box-shadow:
-        0 15px 40px rgba(0,0,0,0.5),
+        0 15px 40px rgba(0,0,0,0.55),
         0 0 30px rgba(255,180,220,0.25);
 
     transform: rotate(-2deg);
@@ -172,28 +201,51 @@ button:hover {
     animation: floatingPhoto 3s ease-in-out infinite;
 }
 
+
+/* =========================
+   PHOTO
+========================= */
+
 .photo-box img {
-    width: min(75vw, 350px);
 
-    height: min(75vw, 350px);
-
-    object-fit: cover;
+    width: 100%;
+    height: 100%;
 
     display: block;
 
-    border-radius: 3px;
+    border-radius: 4px;
+
+    /*
+       IMPORTANT:
+       Same frame + fixed crop
+    */
+
+    object-fit: cover;
+
+    object-position: center;
+
+    background: #111;
 
     animation: photoAppear 0.8s ease;
 }
 
+
+/* =========================
+   PHOTO ANIMATION
+========================= */
+
 @keyframes floatingPhoto {
 
     0%,100% {
-        transform: rotate(-2deg) translateY(0);
+        transform:
+            rotate(-2deg)
+            translateY(0);
     }
 
     50% {
-        transform: rotate(2deg) translateY(-8px);
+        transform:
+            rotate(2deg)
+            translateY(-8px);
     }
 
 }
@@ -202,18 +254,30 @@ button:hover {
 
     from {
         opacity: 0;
-        transform: scale(0.92);
+
+        transform:
+            scale(1.05);
     }
 
     to {
         opacity: 1;
-        transform: scale(1);
+
+        transform:
+            scale(1);
     }
 
 }
 
+
+/* =========================
+   CAPTION
+========================= */
+
 .photo-caption {
-    font-family: "Dancing Script", cursive;
+
+    font-family:
+        "Dancing Script",
+        cursive;
 
     font-size: 25px;
 
@@ -222,10 +286,16 @@ button:hover {
     margin-bottom: 20px;
 }
 
-/* MESSAGE */
+
+/* =========================
+   MESSAGE
+========================= */
 
 .message-title {
-    font-family: "Dancing Script", cursive;
+
+    font-family:
+        "Dancing Script",
+        cursive;
 
     font-size: 40px;
 
@@ -235,9 +305,13 @@ button:hover {
 }
 
 .message {
-    font-family: "Dancing Script", cursive;
 
-    font-size: clamp(24px, 6vw, 34px);
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        clamp(24px, 6vw, 34px);
 
     line-height: 1.55;
 
@@ -253,40 +327,57 @@ button:hover {
 }
 
 .fade {
-    animation: messageFade 0.7s ease;
+
+    animation:
+        messageFade 0.7s ease;
 }
 
 @keyframes messageFade {
 
     from {
         opacity: 0;
-        transform: translateY(15px);
+
+        transform:
+            translateY(15px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 
 }
 
-/* FINAL */
+
+/* =========================
+   FINAL
+========================= */
 
 .final-title {
-    font-family: "Dancing Script", cursive;
 
-    font-size: clamp(45px, 11vw, 75px);
+    font-family:
+        "Dancing Script",
+        cursive;
+
+    font-size:
+        clamp(45px, 11vw, 75px);
 
     color: #ffd1e4;
 
     margin-bottom: 20px;
 
     text-shadow:
-        0 0 15px rgba(255,150,200,0.7);
+        0 0 15px
+        rgba(255,150,200,0.7);
 }
 
 .final-message {
-    font-family: "Dancing Script", cursive;
+
+    font-family:
+        "Dancing Script",
+        cursive;
 
     font-size: 30px;
 
@@ -295,16 +386,21 @@ button:hover {
     margin-bottom: 25px;
 }
 
-/* HEARTS */
+
+/* =========================
+   FLOATING HEARTS
+========================= */
 
 .heart {
+
     position: fixed;
 
     bottom: -30px;
 
     font-size: 22px;
 
-    animation: heartFloat linear infinite;
+    animation:
+        heartFloat linear infinite;
 
     opacity: 0.7;
 
@@ -314,7 +410,9 @@ button:hover {
 @keyframes heartFloat {
 
     0% {
-        transform: translateY(0);
+        transform:
+            translateY(0);
+
         opacity: 0;
     }
 
@@ -323,6 +421,7 @@ button:hover {
     }
 
     100% {
+
         transform:
             translateY(-110vh)
             rotate(360deg);
@@ -332,21 +431,28 @@ button:hover {
 
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 500px) {
 
     .box {
-        padding: 30px 17px;
+        padding: 30px 16px;
     }
 
-    .photo-box img {
-        width: 270px;
-        height: 270px;
+    .photo-box {
+
+        width: 285px;
+
+        height: 360px;
     }
 
     .message {
+
         font-size: 25px;
+
         min-height: 220px;
     }
 
@@ -355,27 +461,50 @@ button:hover {
 </style>
 </head>
 
+
 <body>
 
 
 <!-- FLOATING HEARTS -->
 
-<div class="heart" style="left:8%; animation-duration:8s;">❤️</div>
+<div class="heart"
+     style="left:8%; animation-duration:8s;">
+    ❤️
+</div>
 
-<div class="heart" style="left:22%; animation-duration:11s;">💗</div>
+<div class="heart"
+     style="left:22%; animation-duration:11s;">
+    💗
+</div>
 
-<div class="heart" style="left:40%; animation-duration:9s;">💕</div>
+<div class="heart"
+     style="left:40%; animation-duration:9s;">
+    💕
+</div>
 
-<div class="heart" style="left:60%; animation-duration:12s;">❤️</div>
+<div class="heart"
+     style="left:60%; animation-duration:12s;">
+    ❤️
+</div>
 
-<div class="heart" style="left:78%; animation-duration:10s;">💖</div>
+<div class="heart"
+     style="left:78%; animation-duration:10s;">
+    💖
+</div>
 
-<div class="heart" style="left:90%; animation-duration:13s;">💕</div>
+<div class="heart"
+     style="left:90%; animation-duration:13s;">
+    💕
+</div>
 
 
-<!-- START SCREEN -->
+<!-- =========================
+     START SCREEN
+========================= -->
 
-<section id="startScreen" class="screen active">
+<section
+    id="startScreen"
+    class="screen active">
 
     <div class="box">
 
@@ -387,8 +516,11 @@ button:hover {
             A little surprise is waiting for you...
         </p>
 
-        <button onclick="startPhotos()">
+        <button
+            onclick="startPhotos()">
+
             Open 💌
+
         </button>
 
     </div>
@@ -396,9 +528,13 @@ button:hover {
 </section>
 
 
-<!-- PHOTO SCREEN -->
+<!-- =========================
+     PHOTO SCREEN
+========================= -->
 
-<section id="photoScreen" class="screen">
+<section
+    id="photoScreen"
+    class="screen">
 
     <div class="box">
 
@@ -406,18 +542,33 @@ button:hover {
             Some Special Memories ❤️
         </div>
 
-        <div id="photoNumber" class="photo-number">
+        <div
+            id="photoNumber"
+            class="photo-number">
+
             MEMORY 1 / 4
+
         </div>
+
 
         <div class="photo-box">
 
-            <img id="photo" alt="Special Memory">
+            <img
+                id="photo"
+                src="Screenshot_20261001_091751.jpg"
+                alt="Special Memory">
 
         </div>
 
-        <div id="photoCaption" class="photo-caption">
+
+        <div
+            id="photoCaption"
+            class="photo-caption">
+
+            A little memory of you ❤️
+
         </div>
+
 
         <button
             id="photoButton"
@@ -432,18 +583,29 @@ button:hover {
 </section>
 
 
-<!-- MESSAGE SCREEN -->
+<!-- =========================
+     MESSAGE SCREEN
+========================= -->
 
-<section id="messageScreen" class="screen">
+<section
+    id="messageScreen"
+    class="screen">
 
     <div class="box">
 
         <div class="message-title">
+
             Something From My Heart ❤️
+
         </div>
 
-        <div id="message" class="message">
+
+        <div
+            id="message"
+            class="message">
+
         </div>
+
 
         <button
             id="messageButton"
@@ -458,15 +620,22 @@ button:hover {
 </section>
 
 
-<!-- FINAL SCREEN -->
+<!-- =========================
+     FINAL SCREEN
+========================= -->
 
-<section id="finalScreen" class="screen">
+<section
+    id="finalScreen"
+    class="screen">
 
     <div class="box">
 
         <div class="final-title">
+
             HAPPY BIRTHDAY 🎂
+
         </div>
+
 
         <div class="final-message">
 
@@ -482,8 +651,11 @@ button:hover {
 
         </div>
 
+
         <button onclick="showSurprise()">
+
             One Last Surprise 💖
+
         </button>
 
     </div>
@@ -493,8 +665,9 @@ button:hover {
 
 <script>
 
+
 /* =========================
-   YOUR 4 PHOTOS
+   4 PHOTOS
 ========================= */
 
 const photos = [
@@ -526,7 +699,9 @@ const captions = [
 let currentPhoto = 0;
 
 
-/* START */
+/* =========================
+   START PHOTOS
+========================= */
 
 function startPhotos() {
 
@@ -534,9 +709,11 @@ function startPhotos() {
         .getElementById("startScreen")
         .classList.remove("active");
 
+
     document
         .getElementById("photoScreen")
         .classList.add("active");
+
 
     currentPhoto = 0;
 
@@ -545,18 +722,24 @@ function startPhotos() {
 }
 
 
-/* SHOW PHOTO */
+/* =========================
+   SHOW PHOTO
+========================= */
 
 function showPhoto() {
 
     const photo =
         document.getElementById("photo");
 
+
     photo.style.animation = "none";
+
 
     setTimeout(function() {
 
-        photo.src = photos[currentPhoto];
+        photo.src =
+            photos[currentPhoto];
+
 
         photo.style.animation =
             "photoAppear 0.8s ease";
@@ -599,7 +782,9 @@ function showPhoto() {
 }
 
 
-/* NEXT PHOTO */
+/* =========================
+   NEXT PHOTO
+========================= */
 
 function nextPhoto() {
 
@@ -617,9 +802,11 @@ function nextPhoto() {
             .getElementById("photoScreen")
             .classList.remove("active");
 
+
         document
             .getElementById("messageScreen")
             .classList.add("active");
+
 
         currentMessage = 0;
 
@@ -658,19 +845,24 @@ const messages = [
 let currentMessage = 0;
 
 
-/* SHOW MESSAGE */
+/* =========================
+   SHOW MESSAGE
+========================= */
 
 function showMessage() {
 
     const message =
         document.getElementById("message");
 
+
     message.classList.remove("fade");
+
 
     setTimeout(function() {
 
         message.innerText =
             messages[currentMessage];
+
 
         message.classList.add("fade");
 
@@ -701,7 +893,9 @@ function showMessage() {
 }
 
 
-/* NEXT MESSAGE */
+/* =========================
+   NEXT MESSAGE
+========================= */
 
 function nextMessage() {
 
@@ -722,6 +916,7 @@ function nextMessage() {
             .getElementById("messageScreen")
             .classList.remove("active");
 
+
         document
             .getElementById("finalScreen")
             .classList.add("active");
@@ -731,7 +926,9 @@ function nextMessage() {
 }
 
 
-/* FINAL SURPRISE */
+/* =========================
+   FINAL SURPRISE
+========================= */
 
 function showSurprise() {
 
