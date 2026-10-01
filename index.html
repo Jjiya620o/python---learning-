@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,7 +6,6 @@
 
 <title>For My Favourite Person ❤️</title>
 
-<!-- Beautiful Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -22,73 +21,22 @@
 
 body {
     min-height: 100vh;
+
     background:
         radial-gradient(circle at top left, #8e3d68, transparent 35%),
         radial-gradient(circle at bottom right, #4d315f, transparent 35%),
         linear-gradient(135deg, #160d20, #281329, #130b1b);
 
     color: white;
-    overflow-x: hidden;
     font-family: "Cormorant Garamond", serif;
+    overflow-x: hidden;
 }
 
-/* Floating Hearts */
-
-.heart {
-    position: fixed;
-    bottom: -30px;
-    font-size: 22px;
-    animation: floatHeart linear infinite;
-    opacity: 0.7;
-    z-index: 0;
-}
-
-@keyframes floatHeart {
-
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-    }
-
-    20% {
-        opacity: 0.8;
-    }
-
-    100% {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-/* Sparkles */
-
-.sparkle {
-    position: fixed;
-    width: 4px;
-    height: 4px;
-    background: white;
-    border-radius: 50%;
-    animation: sparkleAnim 2s infinite alternate;
-    opacity: 0.6;
-}
-
-@keyframes sparkleAnim {
-
-    from {
-        transform: scale(0.5);
-        opacity: 0.2;
-    }
-
-    to {
-        transform: scale(1.5);
-        opacity: 1;
-    }
-}
-
-/* Screens */
+/* SCREEN */
 
 .screen {
     min-height: 100vh;
+
     display: none;
 
     align-items: center;
@@ -106,18 +54,18 @@ body {
     display: flex;
 }
 
-/* Main Box */
+/* BOX */
 
 .box {
-    width: min(92%, 600px);
+    width: min(92%, 620px);
 
-    padding: 40px 25px;
+    padding: 40px 22px;
 
     border-radius: 30px;
 
     background: rgba(255,255,255,0.08);
 
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(15px);
 
     border: 1px solid rgba(255,255,255,0.18);
 
@@ -126,7 +74,7 @@ body {
         inset 0 0 30px rgba(255,255,255,0.03);
 }
 
-/* Headings */
+/* START */
 
 h1 {
     font-family: "Playfair Display", serif;
@@ -144,7 +92,7 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* Buttons */
+/* BUTTON */
 
 button {
     border: none;
@@ -153,11 +101,12 @@ button {
 
     border-radius: 30px;
 
-    background: linear-gradient(
-        135deg,
-        #ff7eb3,
-        #ff4f91
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #ff7eb3,
+            #ff4f91
+        );
 
     color: white;
 
@@ -167,7 +116,8 @@ button {
 
     cursor: pointer;
 
-    box-shadow: 0 8px 25px rgba(255,80,150,0.35);
+    box-shadow:
+        0 8px 25px rgba(255,80,150,0.35);
 
     transition: 0.3s;
 }
@@ -176,17 +126,31 @@ button:hover {
     transform: translateY(-3px) scale(1.03);
 }
 
-/* Photo Screen */
+/* PHOTO */
 
 .photo-title {
     font-family: "Dancing Script", cursive;
 
     font-size: 38px;
 
-    margin-bottom: 20px;
+    color: #ffd6e8;
+
+    margin-bottom: 18px;
 }
 
-/* Polaroid */
+.photo-number {
+    font-family: "Playfair Display", serif;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.75;
+
+    margin-bottom: 12px;
+}
+
+/* POLAROID */
 
 .photo-box {
     display: inline-block;
@@ -197,32 +161,21 @@ button:hover {
 
     border-radius: 5px;
 
+    margin-bottom: 20px;
+
     box-shadow:
         0 15px 40px rgba(0,0,0,0.5),
         0 0 30px rgba(255,180,220,0.25);
 
     transform: rotate(-2deg);
 
-    margin-bottom: 20px;
-
-    animation: polaroidFloat 3s ease-in-out infinite;
-}
-
-@keyframes polaroidFloat {
-
-    0%,100% {
-        transform: rotate(-2deg) translateY(0);
-    }
-
-    50% {
-        transform: rotate(2deg) translateY(-8px);
-    }
+    animation: floatingPhoto 3s ease-in-out infinite;
 }
 
 .photo-box img {
-    width: min(75vw, 330px);
+    width: min(75vw, 350px);
 
-    height: min(75vw, 330px);
+    height: min(75vw, 350px);
 
     object-fit: cover;
 
@@ -231,6 +184,18 @@ button:hover {
     border-radius: 3px;
 
     animation: photoAppear 0.8s ease;
+}
+
+@keyframes floatingPhoto {
+
+    0%,100% {
+        transform: rotate(-2deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(2deg) translateY(-8px);
+    }
+
 }
 
 @keyframes photoAppear {
@@ -244,18 +209,7 @@ button:hover {
         opacity: 1;
         transform: scale(1);
     }
-}
 
-.photo-number {
-    font-family: "Playfair Display", serif;
-
-    font-size: 14px;
-
-    letter-spacing: 2px;
-
-    opacity: 0.75;
-
-    margin-bottom: 8px;
 }
 
 .photo-caption {
@@ -268,16 +222,16 @@ button:hover {
     margin-bottom: 20px;
 }
 
-/* Message */
+/* MESSAGE */
 
 .message-title {
     font-family: "Dancing Script", cursive;
 
     font-size: 40px;
 
-    margin-bottom: 25px;
-
     color: #ffd6e8;
+
+    margin-bottom: 20px;
 }
 
 .message {
@@ -287,7 +241,7 @@ button:hover {
 
     line-height: 1.55;
 
-    min-height: 170px;
+    min-height: 200px;
 
     display: flex;
 
@@ -298,7 +252,7 @@ button:hover {
     padding: 10px;
 }
 
-.message.fade {
+.fade {
     animation: messageFade 0.7s ease;
 }
 
@@ -313,9 +267,10 @@ button:hover {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
 
-/* Final Screen */
+/* FINAL */
 
 .final-title {
     font-family: "Dancing Script", cursive;
@@ -326,20 +281,8 @@ button:hover {
 
     margin-bottom: 20px;
 
-    animation: finalGlow 2s infinite alternate;
-}
-
-@keyframes finalGlow {
-
-    from {
-        text-shadow: 0 0 8px rgba(255,150,200,0.3);
-    }
-
-    to {
-        text-shadow:
-            0 0 15px rgba(255,150,200,0.8),
-            0 0 30px rgba(255,100,180,0.5);
-    }
+    text-shadow:
+        0 0 15px rgba(255,150,200,0.7);
 }
 
 .final-message {
@@ -352,12 +295,49 @@ button:hover {
     margin-bottom: 25px;
 }
 
-/* Mobile */
+/* HEARTS */
+
+.heart {
+    position: fixed;
+
+    bottom: -30px;
+
+    font-size: 22px;
+
+    animation: heartFloat linear infinite;
+
+    opacity: 0.7;
+
+    z-index: 1;
+}
+
+@keyframes heartFloat {
+
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+/* MOBILE */
 
 @media (max-width: 500px) {
 
     .box {
-        padding: 30px 18px;
+        padding: 30px 17px;
     }
 
     .photo-box img {
@@ -367,11 +347,7 @@ button:hover {
 
     .message {
         font-size: 25px;
-        min-height: 200px;
-    }
-
-    .photo-title {
-        font-size: 34px;
+        min-height: 220px;
     }
 
 }
@@ -379,34 +355,33 @@ button:hover {
 </style>
 </head>
 
-
 <body>
 
 
-<!-- Floating Decorations -->
+<!-- FLOATING HEARTS -->
 
 <div class="heart" style="left:8%; animation-duration:8s;">❤️</div>
+
 <div class="heart" style="left:22%; animation-duration:11s;">💗</div>
+
 <div class="heart" style="left:40%; animation-duration:9s;">💕</div>
+
 <div class="heart" style="left:60%; animation-duration:12s;">❤️</div>
+
 <div class="heart" style="left:78%; animation-duration:10s;">💖</div>
+
 <div class="heart" style="left:90%; animation-duration:13s;">💕</div>
 
-<div class="sparkle" style="left:15%;top:20%;"></div>
-<div class="sparkle" style="left:80%;top:25%;"></div>
-<div class="sparkle" style="left:30%;top:70%;"></div>
-<div class="sparkle" style="left:70%;top:65%;"></div>
 
-
-<!-- ========================= -->
 <!-- START SCREEN -->
-<!-- ========================= -->
 
 <section id="startScreen" class="screen active">
 
     <div class="box">
 
-        <h1>For My Favourite Person ❤️</h1>
+        <h1>
+            For My Favourite Person ❤️
+        </h1>
 
         <p class="subtitle">
             A little surprise is waiting for you...
@@ -421,10 +396,7 @@ button:hover {
 </section>
 
 
-
-<!-- ========================= -->
 <!-- PHOTO SCREEN -->
-<!-- ========================= -->
 
 <section id="photoScreen" class="screen">
 
@@ -434,26 +406,25 @@ button:hover {
             Some Special Memories ❤️
         </div>
 
-        <div class="photo-number" id="photoNumber">
+        <div id="photoNumber" class="photo-number">
             MEMORY 1 / 4
         </div>
 
         <div class="photo-box">
 
-            <img
-                id="photo"
-                src="Screenshot_20261001_091751.jpg"
-                alt="Special Memory"
-            >
+            <img id="photo" alt="Special Memory">
 
         </div>
 
-        <div class="photo-caption" id="photoCaption">
-            A little memory of you ❤️
+        <div id="photoCaption" class="photo-caption">
         </div>
 
-        <button id="photoButton" onclick="nextPhoto()">
+        <button
+            id="photoButton"
+            onclick="nextPhoto()">
+
             Continue ♡
+
         </button>
 
     </div>
@@ -461,10 +432,7 @@ button:hover {
 </section>
 
 
-
-<!-- ========================= -->
 <!-- MESSAGE SCREEN -->
-<!-- ========================= -->
 
 <section id="messageScreen" class="screen">
 
@@ -474,10 +442,15 @@ button:hover {
             Something From My Heart ❤️
         </div>
 
-        <div id="message" class="message"></div>
+        <div id="message" class="message">
+        </div>
 
-        <button id="messageButton" onclick="nextMessage()">
+        <button
+            id="messageButton"
+            onclick="nextMessage()">
+
             Continue ♡
+
         </button>
 
     </div>
@@ -485,10 +458,7 @@ button:hover {
 </section>
 
 
-
-<!-- ========================= -->
 <!-- FINAL SCREEN -->
-<!-- ========================= -->
 
 <section id="finalScreen" class="screen">
 
@@ -521,11 +491,10 @@ button:hover {
 </section>
 
 
-
 <script>
 
 /* =========================
-   PHOTOS
+   YOUR 4 PHOTOS
 ========================= */
 
 const photos = [
@@ -557,28 +526,26 @@ const captions = [
 let currentPhoto = 0;
 
 
-/* =========================
-   START
-========================= */
+/* START */
 
 function startPhotos() {
 
-    document.getElementById("startScreen")
+    document
+        .getElementById("startScreen")
         .classList.remove("active");
 
-    document.getElementById("photoScreen")
+    document
+        .getElementById("photoScreen")
         .classList.add("active");
 
     currentPhoto = 0;
 
     showPhoto();
+
 }
 
 
-
-/* =========================
-   SHOW PHOTO
-========================= */
+/* SHOW PHOTO */
 
 function showPhoto() {
 
@@ -597,27 +564,33 @@ function showPhoto() {
     }, 50);
 
 
-    document.getElementById("photoNumber")
+    document
+        .getElementById("photoNumber")
         .innerText =
         "MEMORY " +
         (currentPhoto + 1) +
         " / 4";
 
 
-    document.getElementById("photoCaption")
+    document
+        .getElementById("photoCaption")
         .innerText =
         captions[currentPhoto];
 
 
     if (currentPhoto === 3) {
 
-        document.getElementById("photoButton")
+        document
+            .getElementById("photoButton")
             .innerText =
             "Now read my heart ❤️";
 
-    } else {
+    }
 
-        document.getElementById("photoButton")
+    else {
+
+        document
+            .getElementById("photoButton")
             .innerText =
             "Continue ♡";
 
@@ -626,10 +599,7 @@ function showPhoto() {
 }
 
 
-
-/* =========================
-   NEXT PHOTO
-========================= */
+/* NEXT PHOTO */
 
 function nextPhoto() {
 
@@ -639,12 +609,16 @@ function nextPhoto() {
 
         showPhoto();
 
-    } else {
+    }
 
-        document.getElementById("photoScreen")
+    else {
+
+        document
+            .getElementById("photoScreen")
             .classList.remove("active");
 
-        document.getElementById("messageScreen")
+        document
+            .getElementById("messageScreen")
             .classList.add("active");
 
         currentMessage = 0;
@@ -654,7 +628,6 @@ function nextPhoto() {
     }
 
 }
-
 
 
 /* =========================
@@ -685,19 +658,14 @@ const messages = [
 let currentMessage = 0;
 
 
-
-/* =========================
-   SHOW MESSAGE
-========================= */
+/* SHOW MESSAGE */
 
 function showMessage() {
 
     const message =
         document.getElementById("message");
 
-
     message.classList.remove("fade");
-
 
     setTimeout(function() {
 
@@ -709,18 +677,23 @@ function showMessage() {
     }, 50);
 
 
-    const button =
-        document.getElementById("messageButton");
+    if (
+        currentMessage ===
+        messages.length - 1
+    ) {
 
-
-    if (currentMessage === messages.length - 1) {
-
-        button.innerText =
+        document
+            .getElementById("messageButton")
+            .innerText =
             "Finish ❤️";
 
-    } else {
+    }
 
-        button.innerText =
+    else {
+
+        document
+            .getElementById("messageButton")
+            .innerText =
             "Continue ♡";
 
     }
@@ -728,25 +701,29 @@ function showMessage() {
 }
 
 
-
-/* =========================
-   NEXT MESSAGE
-========================= */
+/* NEXT MESSAGE */
 
 function nextMessage() {
 
-    if (currentMessage < messages.length - 1) {
+    if (
+        currentMessage <
+        messages.length - 1
+    ) {
 
         currentMessage++;
 
         showMessage();
 
-    } else {
+    }
 
-        document.getElementById("messageScreen")
+    else {
+
+        document
+            .getElementById("messageScreen")
             .classList.remove("active");
 
-        document.getElementById("finalScreen")
+        document
+            .getElementById("finalScreen")
             .classList.add("active");
 
     }
@@ -754,10 +731,7 @@ function nextMessage() {
 }
 
 
-
-/* =========================
-   FINAL SURPRISE
-========================= */
+/* FINAL SURPRISE */
 
 function showSurprise() {
 
@@ -770,6 +744,4 @@ function showSurprise() {
 </script>
 
 </body>
-   </html>
-
-
+</html>
