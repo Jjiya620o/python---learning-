@@ -1,730 +1,753 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>For My Favourite One ❤️</title>
-
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
-
-        body {
-
-            margin: 0;
-
-            min-height: 100vh;
-
-            font-family: Arial, sans-serif;
-
-            background:
-            linear-gradient(
-                135deg,
-                #ff758c,
-                #ff7eb3,
-                #c471ed
-            );
-
-            color: white;
-
-            overflow-x: hidden;
-
-        }
-
-
-        .screen {
-
-            min-height: 100vh;
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            padding: 25px;
-
-            text-align: center;
-
-        }
-
-
-        .card {
-
-            width: 92%;
-
-            max-width: 650px;
-
-            padding: 35px 25px;
-
-            border-radius: 30px;
-
-            background:
-            rgba(255,255,255,0.18);
-
-            backdrop-filter: blur(12px);
-
-            box-shadow:
-            0 15px 40px
-            rgba(0,0,0,0.25);
-
-            animation: appear 1.5s ease;
-
-        }
-
-
-        @keyframes appear {
-
-            from {
-
-                opacity: 0;
-
-                transform:
-                scale(0.7);
-
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform:
-                scale(1);
-
-            }
-
-        }
-
-
-        h1 {
-
-            font-size: 32px;
-
-            margin-bottom: 20px;
-
-        }
-
-
-        h2 {
-
-            font-size: 28px;
-
-            margin: 20px 0;
-
-        }
-
-
-        p {
-
-            font-size: 18px;
-
-            line-height: 1.8;
-
-        }
-
-
-        button {
-
-            border: none;
-
-            padding: 15px 30px;
-
-            margin: 10px;
-
-            border-radius: 30px;
-
-            background: white;
-
-            color: #ff4f81;
-
-            font-size: 17px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-            box-shadow:
-            0 5px 15px
-            rgba(0,0,0,0.2);
-
-        }
-
-
-        button:active {
-
-            transform: scale(0.93);
-
-        }
-
-
-        .hidden {
-
-            display: none;
-
-        }
-
-
-        .message {
-
-            text-align: left;
-
-            padding: 20px;
-
-            margin-top: 20px;
-
-            border-radius: 20px;
-
-            background:
-            rgba(255,255,255,0.12);
-
-        }
-
-
-        .birthday {
-
-            font-size: 28px;
-
-            font-weight: bold;
-
-            animation:
-            birthdayGlow 1.2s
-            infinite alternate;
-
-        }
-
-
-        @keyframes birthdayGlow {
-
-            from {
-
-                transform: scale(1);
-
-            }
-
-            to {
-
-                transform: scale(1.08);
-
-            }
-
-        }
-
-
-        .cake {
-
-            font-size: 80px;
-
-            animation:
-            cakeBounce 1s
-            infinite alternate;
-
-        }
-
-
-        @keyframes cakeBounce {
-
-            from {
-
-                transform:
-                translateY(0);
-
-            }
-
-            to {
-
-                transform:
-                translateY(-12px);
-
-            }
-
-        }
-
-
-        .heart {
-
-            position: fixed;
-
-            bottom: -40px;
-
-            font-size: 25px;
-
-            pointer-events: none;
-
-            animation:
-            floatHeart 6s
-            linear infinite;
-
-            z-index: 10;
-
-        }
-
-
-        @keyframes floatHeart {
-
-            0% {
-
-                transform:
-                translateY(0)
-                rotate(0deg);
-
-                opacity: 1;
-
-            }
-
-            100% {
-
-                transform:
-                translateY(-110vh)
-                rotate(360deg);
-
-                opacity: 0;
-
-            }
-
-        }
-
-
-        .star {
-
-            position: fixed;
-
-            font-size: 18px;
-
-            animation:
-            starMove 5s
-            linear infinite;
-
-            pointer-events: none;
-
-        }
-
-
-        @keyframes starMove {
-
-            0% {
-
-                transform:
-                translateY(100vh);
-
-                opacity: 0;
-
-            }
-
-            30% {
-
-                opacity: 1;
-
-            }
-
-            100% {
-
-                transform:
-                translateY(-20vh);
-
-                opacity: 0;
-
-            }
-
-        }
-
-
-        .typing {
-
-            min-height: 200px;
-
-        }
-
-
-        .small {
-
-            font-size: 14px;
-
-            opacity: 0.85;
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little Surprise ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Dancing+Script:wght@500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at top left,#54245f 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#8b315f 0%,transparent 35%),
+    linear-gradient(135deg,#170d20,#28112d,#180b22);
+    color:white;
+}
+
+/* Floating hearts */
+
+.heart{
+    position:fixed;
+    bottom:-30px;
+    font-size:22px;
+    opacity:.7;
+    animation:floatHeart 8s linear infinite;
+    pointer-events:none;
+}
+
+.heart:nth-child(1){left:8%;animation-delay:1s;}
+.heart:nth-child(2){left:22%;animation-delay:3s;}
+.heart:nth-child(3){left:45%;animation-delay:0s;}
+.heart:nth-child(4){left:68%;animation-delay:2s;}
+.heart:nth-child(5){left:88%;animation-delay:4s;}
+
+@keyframes floatHeart{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.8;
+    }
+
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* Sparkles */
+
+.sparkle{
+    position:fixed;
+    color:white;
+    animation:twinkle 2s infinite alternate;
+    pointer-events:none;
+}
+
+.s1{top:15%;left:12%;}
+.s2{top:30%;right:15%;animation-delay:.5s;}
+.s3{bottom:20%;left:18%;animation-delay:1s;}
+.s4{bottom:30%;right:10%;animation-delay:1.5s;}
+
+@keyframes twinkle{
+    from{
+        opacity:.2;
+        transform:scale(.7);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.3);
+    }
+}
+
+/* Screens */
+
+.screen{
+    display:none;
+    min-height:100vh;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+    text-align:center;
+}
+
+.screen.active{
+    display:flex;
+}
+
+/* Main box */
+
+.box{
+    width:min(90%,600px);
+    padding:35px 25px;
+    border-radius:28px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.18);
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.mini{
+    font-family:"Cormorant Garamond",serif;
+    font-size:18px;
+    letter-spacing:3px;
+    opacity:.8;
+    margin-bottom:15px;
+}
+
+.title{
+    font-family:"Playfair Display",serif;
+    font-size:38px;
+    margin-bottom:18px;
+}
+
+.subtitle{
+    font-family:"Cormorant Garamond",serif;
+    font-size:22px;
+    line-height:1.5;
+    opacity:.9;
+}
+
+/* Buttons */
+
+button{
+    margin-top:28px;
+    padding:13px 30px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(135deg,#ff8fb8,#d95c91);
+    color:white;
+    font-size:17px;
+    font-family:"Cormorant Garamond",serif;
+    cursor:pointer;
+    box-shadow:0 8px 25px rgba(255,105,160,.3);
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.06);
+}
+
+/* Photo */
+
+.photo-box{
+    width:min(90%,520px);
+    animation:fadeUp 1s ease;
+}
+
+.photo-number{
+    font-family:"Playfair Display",serif;
+    letter-spacing:4px;
+    font-size:14px;
+    opacity:.8;
+    margin-bottom:20px;
+}
+
+.polaroid{
+    background:white;
+    padding:12px 12px 50px;
+    width:min(85vw,380px);
+    margin:auto;
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.5),
+    0 0 30px rgba(255,150,200,.15);
+
+    transform:rotate(-2deg);
+    animation:photoAppear .8s ease;
+}
+
+@keyframes photoAppear{
+    from{
+        opacity:0;
+        transform:scale(.75) rotate(-8deg);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1) rotate(-2deg);
+    }
+}
+
+.polaroid img{
+    width:100%;
+    height:360px;
+    object-fit:cover;
+    display:block;
+}
+
+.photo-caption{
+    color:#3d2632;
+    font-family:"Dancing Script",cursive;
+    font-size:25px;
+    margin-top:15px;
+}
+
+/* Message */
+
+.message-box{
+    width:min(90%,700px);
+    padding:40px 25px;
+    border-radius:28px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.18);
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+    animation:fadeUp .8s ease;
+}
+
+.message-number{
+    font-family:"Playfair Display",serif;
+    font-size:14px;
+    letter-spacing:3px;
+    opacity:.65;
+    margin-bottom:25px;
+}
+
+.message-text{
+    font-family:"Dancing Script",cursive;
+    font-size:30px;
+    line-height:1.55;
+    min-height:150px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    animation:textAppear .6s ease;
+}
+
+@keyframes textAppear{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.color1{color:#ffd1e1;}
+.color2{color:#ffe0a8;}
+.color3{color:#d8c7ff;}
+.color4{color:#bff4e3;}
+.color5{color:#ffc6c6;}
+.color6{color:#fff1b8;}
+.color7{color:#ffb6d5;}
+.color8{color:#d7d0ff;}
+
+/* Final */
+
+.final-title{
+    font-family:"Playfair Display",serif;
+    font-size:42px;
+    letter-spacing:3px;
+}
+
+.final-subtitle{
+    font-family:"Dancing Script",cursive;
+    font-size:38px;
+    margin-top:8px;
+}
+
+.cake{
+    font-size:65px;
+    animation:cake 1.5s infinite alternate;
+}
+
+@keyframes cake{
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-8px);
+    }
+}
+
+.final-message{
+    font-family:"Dancing Script",cursive;
+    font-size:27px;
+    line-height:1.5;
+    margin-top:20px;
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .title{
+        font-size:31px;
+    }
+
+    .subtitle{
+        font-size:20px;
+    }
+
+    .polaroid img{
+        height:320px;
+    }
+
+    .message-text{
+        font-size:27px;
+        min-height:180px;
+    }
+
+    .final-title{
+        font-size:32px;
+    }
+
+    .final-subtitle{
+        font-size:34px;
+    }
+
+}
+
+</style>
 </head>
-
 
 <body>
 
+<!-- Floating decorations -->
 
-    <!-- FLOATING HEARTS -->
+<div class="heart">❤️</div>
+<div class="heart">🩷</div>
+<div class="heart">🤍</div>
+<div class="heart">💗</div>
+<div class="heart">❤️</div>
 
-    <div class="heart"
-         style="left:10%;animation-delay:0s;">
-        ❤️
-    </div>
-
-    <div class="heart"
-         style="left:30%;animation-delay:2s;">
-        💖
-    </div>
-
-    <div class="heart"
-         style="left:50%;animation-delay:4s;">
-        💕
-    </div>
-
-    <div class="heart"
-         style="left:70%;animation-delay:1s;">
-        💗
-    </div>
-
-    <div class="heart"
-         style="left:90%;animation-delay:3s;">
-        💓
-    </div>
+<div class="sparkle s1">✦</div>
+<div class="sparkle s2">✧</div>
+<div class="sparkle s3">✦</div>
+<div class="sparkle s4">✧</div>
 
 
-    <!-- OPENING SCREEN -->
+<!-- START -->
 
-    <div class="screen"
-         id="opening">
+<section class="screen active" id="start">
 
-        <div class="card">
+    <div class="box">
 
-            <h1>
-                Hey... 🥺❤️
-            </h1>
-
-            <p>
-                Wait a little... ✨
-            </p>
-
-            <p>
-                I made something
-                special for you 🫂🧿
-            </p>
-
-            <button onclick="openMessage()">
-                OPEN ❤️
-            </button>
-
+        <div class="mini">
+            A little something for you
         </div>
 
+        <h1 class="title">
+            For My Favourite Person ❤️
+        </h1>
+
+        <p class="subtitle">
+            I have something to tell you... 🥺
+        </p>
+
+        <button onclick="startPhotos()">
+            Open 💌
+        </button>
+
     </div>
 
+</section>
 
-    <!-- MESSAGE SCREEN -->
 
-    <div class="screen hidden"
-         id="messageScreen">
+<!-- PHOTO SCREEN -->
 
-        <div class="card">
+<section class="screen" id="photoScreen">
 
-            <h1>
-                Hey, my all-time
-                favourite one 🥺🫂🧿
-            </h1>
+    <div class="photo-box">
 
-            <div class="message">
+        <div class="photo-number" id="photoNumber">
+            MEMORY 1 / 4
+        </div>
 
-                <p id="typingText"
-                   class="typing">
-                </p>
+        <div class="polaroid">
 
+            <img id="photo"
+                 src="photo1.jpg"
+                 alt="A special memory">
+
+            <div class="photo-caption" id="photoCaption">
+                A little memory of you ❤️
             </div>
 
-            <button onclick="showBirthday()">
-                NEXT ✨
-            </button>
-
-            <button onclick="toggleMusic()">
-                🎵 MUSIC
-            </button>
-
-            <audio id="music" loop>
-
-                <source
-                    src="song.mp3"
-                    type="audio/mpeg">
-
-            </audio>
-
         </div>
+
+        <button onclick="nextPhoto()" id="photoButton">
+            Continue ♡
+        </button>
 
     </div>
 
+</section>
 
-    <!-- BIRTHDAY SCREEN -->
 
-    <div class="screen hidden"
-         id="birthdayScreen">
+<!-- MESSAGE SCREEN -->
 
-        <div class="card">
+<section class="screen" id="messageScreen">
 
-            <div class="cake">
-                🎂
-            </div>
+    <div class="message-box">
 
-            <h1 class="birthday">
-                HAPPY BIRTHDAY
-            </h1>
-
-            <h2>
-                DARLING ♥️🧿
-            </h2>
-
-            <p>
-                😚 🫂 ❤️
-            </p>
-
-            <p class="birthday">
-                LOVE YOU ❤️ BBY 😚
-            </p>
-
-            <button onclick="showSurprise()">
-                🎁 OPEN YOUR SURPRISE
-            </button>
-
+        <div class="message-number" id="messageNumber">
+            01 / 08
         </div>
+
+        <div class="message-text color1"
+             id="messageText">
+        </div>
+
+        <button onclick="nextMessage()" id="messageButton">
+            Continue ♡
+        </button>
 
     </div>
 
+</section>
 
-    <!-- SURPRISE SCREEN -->
 
-    <div class="screen hidden"
-         id="surpriseScreen">
+<!-- FINAL SCREEN -->
 
-        <div class="card">
+<section class="screen" id="finalScreen">
 
-            <h1>
-                🥺🫂❤️
-            </h1>
+    <div class="box">
 
-            <h2>
-                One last thing...
-            </h2>
-
-            <p>
-                Main hamesha tere saath rahungi,
-                tere har bure waqt mein
-                tera saath dungi 🫂🫂🫂
-            </p>
-
-            <h1>
-                🎉 ❤️ 🎂 ❤️ 🎉
-            </h1>
-
-            <p>
-                You are very special
-                in my life ❤️🤌🏼
-            </p>
-
-            <p class="small">
-                Made with lots of love ❤️✨
-            </p>
-
+        <div class="cake">
+            🎂
         </div>
+
+        <h1 class="final-title">
+            HAPPY BIRTHDAY
+        </h1>
+
+        <h2 class="final-subtitle">
+            DARLING ❤️
+        </h2>
+
+        <p class="final-message">
+
+            I am very lucky to have you in my life. 🥺🫂
+
+            <br><br>
+
+            LOVE YOU ❤️ BBY 😚
+
+            <br><br>
+
+            🧿 🫂 ❤️ 🎂
+
+        </p>
 
     </div>
 
+</section>
 
-    <script>
+
+<script>
+
+/* =========================
+   ONLY 4 PHOTOS
+========================= */
+
+const photos = [
+
+    "photo1.jpg",
+    "photo2.jpg",
+    "photo3.jpg",
+    "photo4.jpg"
+
+];
+
+const captions = [
+
+    "A little memory of you ❤️",
+
+    "One more beautiful memory 🥺",
+
+    "Some moments are special ✨",
+
+    "This one is close to my heart 🫂"
+
+];
+
+let currentPhoto = 0;
 
 
-        const message = `
+/* Start */
 
-I know hum daily nahi milte,
-daily baat nahi karte,
-but I miss you always 🥹
+function startPhotos(){
 
-Teri jagah koi nahi le sakta.
+    document.getElementById("start")
+    .classList.remove("active");
 
-Aur zyada kuch nahi bolna chahti hu,
-bas tu hamesha mere saath rehna 🤌🏼
-aur hamesha saath dena .....
+    document.getElementById("photoScreen")
+    .classList.add("active");
 
-Aur sorry yrr 😔
+    showPhoto();
 
-Main tere bure waqt par
-tere saath nahi thi.
+}
 
-Us waqt mujhe tere saath hona tha 😔
 
-Yeh baat mujhe hamesha
-regret feel karati hai...
+/* Show photo */
 
-I am very sorry ....
+function showPhoto(){
+
+    const photo =
+        document.getElementById("photo");
+
+    photo.style.animation = "none";
+
+    setTimeout(function(){
+
+        photo.src = photos[currentPhoto];
+
+        photo.style.animation =
+            "photoAppear .8s ease";
+
+    },50);
+
+
+    document.getElementById("photoNumber")
+    .innerText =
+        "MEMORY "
+        + (currentPhoto + 1)
+        + " / 4";
+
+
+    document.getElementById("photoCaption")
+    .innerText =
+        captions[currentPhoto];
+
+
+    document.getElementById("photoButton")
+    .innerText =
+        currentPhoto === 3
+        ? "Now read my heart ❤️"
+        : "Continue ♡";
+
+}
+
+
+/* Next photo */
+
+function nextPhoto(){
+
+    if(currentPhoto < 3){
+
+        currentPhoto++;
+
+        showPhoto();
+
+    }
+
+    else{
+
+        document.getElementById("photoScreen")
+        .classList.remove("active");
+
+        document.getElementById("messageScreen")
+        .classList.add("active");
+
+        showMessage();
+
+    }
+
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+const messages = [
+
+`Hey my all time favourite one 🥺🫂🧿`,
+
+`You are very special in my life ❤️ 🤌🏼`,
+
+`I know hm daily nhi milte daily bat nhi krte but I miss you always 🥹 teri jagah koi nhi le skta`,
+
+`Or jyda kuch nhi bolna chahti hu bs tu hmesha mere sath rhna 🤌🏼 or hmesha sath dena .....`,
+
+`Or sorry yrr 😔 mai tere bure vkt pr tere sath nhi thi us. Vakt mujhe tere sath hona tha 😔 yah bat mujhe hamesha regret feel krati hai ...`,
+
+`I am very sorry ....`,
+
+`HAPPY BIRTHDAY 🎂 DARLING ♥️ 🧿 😚 🫂 LOVE YOU ❤️ BBY 😚`,
+
+`Mai hmesha tere sath rhungi tere hr bure vakt pe tera sath dungi 🫂🫂🫂`
+
+];
+
+let currentMessage = 0;
+
+
+function showMessage(){
+
+    const text =
+        document.getElementById("messageText");
+
+    text.className =
+        "message-text color"
+        + (currentMessage + 1);
+
+    text.innerHTML =
+        messages[currentMessage];
+
+
+    document.getElementById("messageNumber")
+    .innerText =
+        String(currentMessage + 1)
+        .padStart(2,"0")
+        + " / 08";
+
+
+    document.getElementById("messageButton")
+    .innerText =
+        currentMessage === 7
+        ? "One Last Surprise ✨"
+        : "Continue ♡";
+
+}
+
+
+/* Next message */
+
+function nextMessage(){
+
+    if(currentMessage < 7){
+
+        currentMessage++;
+
+        showMessage();
+
+    }
+
+    else{
+
+        document.getElementById("messageScreen")
+        .classList.remove("active");
+
+        document.getElementById("finalScreen")
+        .classList.add("active");
+
+        confetti();
+
+    }
+
+}
+
+
+/* Confetti */
+
+function confetti(){
+
+    const symbols =
+        ["❤️","🩷","✨","🎉","💗","🧿"];
+
+    for(let i=0;i<35;i++){
+
+        const item =
+            document.createElement("div");
+
+        item.innerText =
+            symbols[
+                Math.floor(
+                    Math.random()*symbols.length
+                )
+            ];
+
+        item.style.position = "fixed";
+
+        item.style.left =
+            Math.random()*100 + "%";
+
+        item.style.top = "-30px";
+
+        item.style.fontSize =
+            (15 + Math.random()*20) + "px";
+
+        item.style.zIndex = "999";
+
+        item.style.animation =
+            "fall "
+            + (2 + Math.random()*3)
+            + "s linear forwards";
+
+        document.body.appendChild(item);
+
+        setTimeout(function(){
+
+            item.remove();
+
+        },5000);
+
+    }
+
+}
+
+
+const style =
+    document.createElement("style");
+
+style.innerHTML = `
+
+@keyframes fall{
+
+    to{
+
+        transform:
+        translateY(110vh)
+        rotate(720deg);
+
+        opacity:0;
+
+    }
+
+}
 
 `;
 
+document.head.appendChild(style);
 
-        let index = 0;
-
-
-        function openMessage() {
-
-            document
-            .getElementById("opening")
-            .classList
-            .add("hidden");
-
-            document
-            .getElementById("messageScreen")
-            .classList
-            .remove("hidden");
-
-            typeMessage();
-
-        }
-
-
-        function typeMessage() {
-
-            if (index < message.length) {
-
-                document
-                .getElementById("typingText")
-                .innerHTML +=
-                message.charAt(index)
-                .replace(/\n/g, "<br>");
-
-                index++;
-
-                setTimeout(
-                    typeMessage,
-                    35
-                );
-
-            }
-
-        }
-
-
-        function showBirthday() {
-
-            document
-            .getElementById("messageScreen")
-            .classList
-            .add("hidden");
-
-            document
-            .getElementById("birthdayScreen")
-            .classList
-            .remove("hidden");
-
-        }
-
-
-        function showSurprise() {
-
-            document
-            .getElementById("birthdayScreen")
-            .classList
-            .add("hidden");
-
-            document
-            .getElementById("surpriseScreen")
-            .classList
-            .remove("hidden");
-
-
-            createConfetti();
-
-        }
-
-
-        function toggleMusic() {
-
-            const music =
-            document.getElementById("music");
-
-
-            if (music.paused) {
-
-                music.play();
-
-            }
-
-            else {
-
-                music.pause();
-
-            }
-
-        }
-
-
-        function createConfetti() {
-
-            for (
-                let i = 0;
-                i < 35;
-                i++
-            ) {
-
-                const heart =
-                document.createElement("div");
-
-                heart.innerHTML =
-                ["❤️","💖","💕","✨","💗"]
-                [
-                    Math.floor(
-                        Math.random() * 5
-                    )
-                ];
-
-                heart.style.position =
-                "fixed";
-
-                heart.style.left =
-                Math.random() * 100 + "%";
-
-                heart.style.top =
-                "-20px";
-
-                heart.style.fontSize =
-                "25px";
-
-                heart.style.zIndex =
-                "100";
-
-                heart.style.transition =
-                "transform 3s linear, opacity 3s";
-
-                document.body
-                .appendChild(heart);
-
-
-                setTimeout(() => {
-
-                    heart.style.transform =
-                    "translateY(110vh) rotate(360deg)";
-
-                    heart.style.opacity =
-                    "0";
-
-                }, 100);
-
-
-                setTimeout(() => {
-
-                    heart.remove();
-
-                }, 3500);
-
-            }
-
-        }
-
-    </script>
-
+</script>
 
 </body>
-
 </html>
 
