@@ -5,742 +5,452 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Someone Special ❤️</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html,body{
-  width:100%;
-  min-height:100%;
-}
+*{box-sizing:border-box}
 
 body{
-  background:
-    radial-gradient(circle at 50% 15%, #401c2d 0%, #170d16 38%, #07060a 80%);
-  color:#f8ead7;
-  font-family:"Cormorant Garamond",serif;
-  overflow-x:hidden;
+ margin:0;
+ min-height:100vh;
+ font-family:Georgia,serif;
+ background:radial-gradient(circle at top,#65233e,#180711 75%);
+ color:#fff3e6;
+ text-align:center;
+ overflow-x:hidden
 }
 
-/* STAR FIELD */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  opacity:.75;
-  background-image:
-    radial-gradient(circle,rgba(255,255,255,.9) 1px,transparent 1.5px),
-    radial-gradient(circle,rgba(236,190,112,.6) 1px,transparent 1.5px);
-  background-size:90px 90px,140px 140px;
-  background-position:20px 30px,70px 90px;
-  animation:stars 12s linear infinite;
-}
-
-@keyframes stars{
-  from{transform:translateY(0)}
-  to{transform:translateY(-80px)}
+.stars{
+ position:fixed;
+ inset:0;
+ pointer-events:none;
+ opacity:.45;
+ z-index:0;
+ background-image:
+ radial-gradient(2px 2px at 20% 30%,white 50%,transparent),
+ radial-gradient(2px 2px at 70% 20%,#ffd780 50%,transparent),
+ radial-gradient(2px 2px at 85% 65%,white 50%,transparent),
+ radial-gradient(2px 2px at 35% 80%,#ffd780 50%,transparent);
+ background-size:180px 180px
 }
 
 .screen{
-  min-height:100vh;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:25px 16px;
-  position:relative;
+ display:none;
+ position:relative;
+ z-index:1;
+ min-height:100vh;
+ padding:30px 16px;
+ align-items:center;
+ justify-content:center;
+ flex-direction:column
 }
 
 .screen.active{
-  display:flex;
+ display:flex;
+ animation:appear .5s ease
 }
 
-/* START SCREEN */
-.start-card{
-  width:min(420px,94vw);
-  text-align:center;
-  padding:42px 25px;
-  border:1px solid rgba(232,194,125,.35);
-  border-radius:30px;
-  background:rgba(20,12,18,.72);
-  backdrop-filter:blur(18px);
-  box-shadow:
-    0 25px 80px rgba(0,0,0,.65),
-    inset 0 0 50px rgba(197,143,70,.05);
-  animation:cardIn 1.2s ease;
+@keyframes appear{
+ from{opacity:0;transform:translateY(10px)}
+ to{opacity:1;transform:translateY(0)}
 }
 
-@keyframes cardIn{
-  from{
-    opacity:0;
-    transform:translateY(30px) scale(.96);
-  }
-  to{
-    opacity:1;
-    transform:none;
-  }
+.card{
+ width:100%;
+ max-width:520px;
+ padding:25px 20px;
+ border:1px solid rgba(255,215,128,.55);
+ border-radius:24px;
+ background:rgba(255,255,255,.07);
+ box-shadow:0 10px 40px #0005;
+ backdrop-filter:blur(8px)
 }
 
-.mini{
-  font-size:14px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-  color:#d9b77b;
-  margin-bottom:22px;
+h1{
+ color:#ffd780;
+ font-size:clamp(27px,7vw,40px);
+ margin:12px 0 18px
 }
 
-.start-card h1{
-  font-family:"Playfair Display",serif;
-  font-size:clamp(30px,8vw,48px);
-  line-height:1.15;
-  font-weight:600;
-  margin-bottom:15px;
+h2{color:#ffe4b5}
+
+p{
+ line-height:1.8;
+ font-size:17px
 }
 
-.start-card p{
-  color:#cdbdb0;
-  font-size:18px;
-  line-height:1.5;
-  margin-bottom:32px;
+button{
+ border:1px solid #ffe2a0;
+ border-radius:30px;
+ padding:13px 20px;
+ margin:8px 4px;
+ font-size:15px;
+ font-weight:bold;
+ color:#3a1021;
+ background:linear-gradient(135deg,#ffe6a3,#d6a64f);
+ cursor:pointer
 }
 
-.gold-btn{
-  border:1px solid #cda45c;
-  color:#fff2d8;
-  background:linear-gradient(135deg,#6f4722,#3b211d);
-  padding:14px 30px;
-  border-radius:50px;
-  font-family:"Cormorant Garamond",serif;
-  font-size:19px;
-  cursor:pointer;
-  box-shadow:0 8px 30px rgba(176,122,49,.25);
-  transition:.3s;
-}
+button:disabled{opacity:.6}
 
-.gold-btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 12px 35px rgba(176,122,49,.4);
-}
-
-/* ENVELOPE */
-.envelope-wrap{
-  width:min(390px,94vw);
-  text-align:center;
+.secondary{
+ color:#ffe6bd;
+ background:transparent;
+ border:1px solid #d6a64f
 }
 
 .envelope{
-  width:100%;
-  height:245px;
-  position:relative;
-  background:linear-gradient(145deg,#452335,#24131d);
-  border:1px solid rgba(224,174,92,.35);
-  border-radius:8px;
-  box-shadow:0 30px 70px rgba(0,0,0,.6);
-  cursor:pointer;
-  overflow:hidden;
+ font-size:95px;
+ cursor:pointer;
+ animation:float 2s infinite ease-in-out
 }
 
-.envelope:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(32deg,transparent 49%,rgba(221,171,94,.16) 50%,transparent 51%);
+@keyframes float{
+ 50%{transform:translateY(-10px)}
 }
 
-.flap{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:125px;
-  background:linear-gradient(145deg,#653248,#301a28);
-  clip-path:polygon(0 0,100% 0,50% 100%);
-  transform-origin:top;
-  transition:1s ease;
-  z-index:4;
+.photo{
+ width:100%;
+ max-width:330px;
+ height:380px;
+ object-fit:cover;
+ border-radius:22px;
+ border:2px solid #e6bd70;
+ box-shadow:0 8px 35px #0008
 }
 
-.envelope.open .flap{
-  transform:rotateX(180deg);
+.small{
+ font-size:14px;
+ color:#e8c9c9
 }
 
-.seal{
-  position:absolute;
-  z-index:6;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-  width:65px;
-  height:65px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#9e2946;
-  border:2px solid #e0b86e;
-  box-shadow:0 0 30px rgba(213,136,84,.35);
-  font-size:27px;
-  transition:.6s;
+#catchArea{
+ position:relative;
+ width:100%;
+ max-width:400px;
+ height:200px;
+ border:1px solid #d6a64f;
+ border-radius:20px;
+ background:#240b19;
+ overflow:hidden;
+ margin:15px auto
 }
 
-.envelope.open .seal{
-  opacity:0;
-  transform:translate(-50%,-50%) scale(.5);
+#runButton{
+ position:absolute;
+ left:30%;
+ top:40%;
+ margin:0;
+ white-space:nowrap
 }
 
-.letter-preview{
-  position:absolute;
-  width:78%;
-  height:160px;
-  left:11%;
-  top:40px;
-  background:#f3dfbd;
-  color:#3a2430;
-  padding:20px;
-  font-family:"Dancing Script",cursive;
-  font-size:20px;
-  z-index:2;
-  transition:1s ease;
+.answer{
+ display:block;
+ width:100%;
+ max-width:350px;
+ margin:10px auto;
+ color:#ffe8c2;
+ background:#4b1a30;
+ border:1px solid #d6a64f
 }
 
-.envelope.open .letter-preview{
-  transform:translateY(-130px);
+#messageText{
+ text-align:left;
+ white-space:pre-line;
+ line-height:2;
+ font-size:16px;
+ overflow-wrap:anywhere
 }
 
-.tap{
-  margin-top:22px;
-  color:#c9ae8b;
-  font-size:16px;
-  letter-spacing:2px;
-}
-
-/* PHOTO */
-.photo-section{
-  width:min(430px,95vw);
-  text-align:center;
-}
-
-.chapter{
-  color:#cda866;
-  letter-spacing:4px;
-  font-size:13px;
-  text-transform:uppercase;
-  margin-bottom:12px;
-}
-
-.photo-frame{
-  padding:10px;
-  background:linear-gradient(135deg,#e1bf7b,#75532d,#d9b36d);
-  border-radius:5px;
-  box-shadow:
-    0 30px 70px rgba(0,0,0,.75),
-    0 0 45px rgba(210,163,85,.12);
-  animation:photoIn 1.1s ease;
-}
-
-@keyframes photoIn{
-  from{
-    opacity:0;
-    transform:scale(.85) rotate(-2deg);
-  }
-  to{
-    opacity:1;
-    transform:scale(1) rotate(0);
-  }
-}
-
-.photo-frame img{
-  width:100%;
-  aspect-ratio:4/5;
-  display:block;
-  object-fit:cover;
-  border:5px solid #120b0d;
-}
-
-.photo-caption{
-  margin-top:18px;
-  font-family:"Dancing Script",cursive;
-  font-size:26px;
-  color:#ead0a0;
-}
-
-/* LETTER */
-.letter-box{
-  width:min(700px,94vw);
-  background:
-    linear-gradient(rgba(36,20,28,.93),rgba(21,12,17,.96));
-  border:1px solid rgba(218,173,99,.35);
-  border-radius:20px;
-  padding:32px 24px;
-  box-shadow:0 30px 90px rgba(0,0,0,.65);
-}
-
-.letter-top{
-  text-align:center;
-  margin-bottom:25px;
-}
-
-.letter-top span{
-  color:#cda866;
-  letter-spacing:3px;
-  font-size:12px;
-  text-transform:uppercase;
-}
-
-.letter-top h2{
-  font-family:"Dancing Script",cursive;
-  font-size:38px;
-  font-weight:600;
-  margin-top:8px;
-}
-
-.message{
-  min-height:370px;
-  font-size:20px;
-  line-height:1.65;
-  color:#eee0d2;
-  white-space:pre-line;
-}
-
-.message-line{
-  opacity:0;
-  transform:translateY(12px);
-  animation:lineIn .8s forwards;
-  margin-bottom:14px;
-}
-
-@keyframes lineIn{
-  to{
-    opacity:1;
-    transform:none;
-  }
-}
-
-.signature{
-  text-align:right;
-  font-family:"Dancing Script",cursive;
-  font-size:25px;
-  color:#d8b778;
-  margin-top:15px;
-}
-
-/* FINAL */
-.final-card{
-  width:min(480px,94vw);
-  text-align:center;
-  padding:40px 20px;
-}
-
-.cake{
-  font-size:95px;
-  animation:cakeFloat 2s ease-in-out infinite;
-  filter:drop-shadow(0 0 25px rgba(240,175,83,.35));
-}
-
-@keyframes cakeFloat{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-10px)}
-}
-
-.final-card h1{
-  font-family:"Dancing Script",cursive;
-  font-size:clamp(46px,12vw,75px);
-  color:#e7bd6d;
-  text-shadow:0 0 25px rgba(225,172,83,.35);
-  margin:18px 0 8px;
-}
-
-.final-card h2{
-  font-family:"Playfair Display",serif;
-  font-size:25px;
-  letter-spacing:3px;
-}
-
-.final-card p{
-  margin-top:20px;
-  color:#cbbcaf;
-  font-size:18px;
-  line-height:1.5;
+#cake{
+ font-size:100px;
+ animation:float 1.5s infinite ease-in-out
 }
 
 .heart{
-  position:fixed;
-  bottom:-30px;
-  font-size:20px;
-  pointer-events:none;
-  animation:floatHeart 5s linear forwards;
+ position:fixed;
+ bottom:-30px;
+ z-index:5;
+ pointer-events:none;
+ animation:rise 5s linear forwards
 }
 
-@keyframes floatHeart{
-  to{
-    transform:translateY(-110vh) rotate(30deg);
-    opacity:0;
-  }
+@keyframes rise{
+ to{
+  transform:translateY(-110vh) rotate(25deg);
+  opacity:0
+ }
 }
 
-/* MOBILE */
-@media(max-width:500px){
-  .screen{
-    padding:20px 12px;
-  }
+[hidden]{display:none!important}
 
-  .letter-box{
-    padding:27px 18px;
-  }
-
-  .message{
-    font-size:18px;
-    line-height:1.6;
-    min-height:430px;
-  }
-
-  .letter-top h2{
-    font-size:34px;
-  }
-
-  .envelope{
-    height:220px;
-  }
+@media(max-width:380px){
+ .photo{height:320px}
+ .card{padding:20px 14px}
 }
 </style>
 </head>
 
 <body>
+<div class="stars"></div>
 
-<!-- SCREEN 1 -->
+<!-- 1. WELCOME -->
 <section class="screen active" id="screen1">
-  <div class="start-card">
-    <div class="mini">A little surprise</div>
-
-    <h1>For Someone<br>Very Special ❤️</h1>
-
-    <p>
-      Some feelings are better written<br>
-      than spoken...
-    </p>
-
-    <button class="gold-btn" onclick="openLetter()">
-      Open the letter ✨
-    </button>
-  </div>
+ <div class="card">
+  <p>✨ A LITTLE SURPRISE ✨</p>
+  <h1>For Someone Special ❤️</h1>
+  <p>A little love, a little madness and lots of memories! 🥹🫂</p>
+  <p>Ready for your surprise? 🤭</p>
+  <button onclick="nextScreen(2)">Let's Start 💖</button>
+ </div>
 </section>
 
-
-<!-- SCREEN 2 -->
+<!-- 2. ENVELOPE -->
 <section class="screen" id="screen2">
-  <div class="envelope-wrap">
-
-    <div class="envelope" id="envelope" onclick="openEnvelope()">
-
-      <div class="letter-preview">
-        For you... ❤️
-      </div>
-
-      <div class="flap"></div>
-
-      <div class="seal">♥</div>
-
-    </div>
-
-    <div class="tap">TAP THE LETTER</div>
-  </div>
+ <div class="card">
+  <h1>A Letter For You 💌</h1>
+  <div class="envelope" onclick="nextScreen(3)">💌</div>
+  <p>Tap the envelope to open your surprise ✨</p>
+  <button onclick="nextScreen(3)">Open the Letter 💌</button>
+ </div>
 </section>
 
-
-<!-- PHOTO 1 -->
+<!-- 3. FIRST PHOTO -->
 <section class="screen" id="screen3">
-  <div class="photo-section">
-
-    <div class="chapter">Chapter I</div>
-
-    <div class="photo-frame">
-      <img src="Screenshot_20261001_091751.jpg">
-    </div>
-
-    <div class="photo-caption">
-      A little memory... ✨
-    </div>
-
-    <br>
-
-    <button class="gold-btn" onclick="nextScreen(4)">
-      Next memory →
-    </button>
-
-  </div>
+ <div class="card">
+  <h1>Beautiful Memories ❤️</h1>
+  <img class="photo"
+       src="Snapchat-1783390479.jpg"
+       alt="Beautiful memory">
+  <p>Some people make life more beautiful just by being in it. 🫂❤️</p>
+  <button onclick="nextScreen(4)">Next Surprise ✨</button>
+ </div>
 </section>
 
-
-<!-- PHOTO 2 -->
+<!-- 4. SECOND PHOTO -->
 <section class="screen" id="screen4">
-  <div class="photo-section">
-
-    <div class="chapter">Chapter II</div>
-
-    <div class="photo-frame">
-      <img src="Snapchat-1783390479.jpg">
-    </div>
-
-    <div class="photo-caption">
-      Another beautiful moment 🤍
-    </div>
-
-    <br>
-
-    <button class="gold-btn" onclick="nextScreen(5)">
-      Keep going →
-    </button>
-
-  </div>
+ <div class="card">
+  <h1>My Favourite Pagli 🤭❤️</h1>
+  <img class="photo"
+       src="Screenshot_20261001_092059.jpg"
+       alt="Special memory">
+  <p>Ek tu hi hai jise main itna tolerate karti hoon! 😂🫂❤️</p>
+  <button onclick="nextScreen(5)">Aage Chalo 😂</button>
+ </div>
 </section>
 
-
-<!-- PHOTO 3 -->
+<!-- 5. CATCH THE BIRTHDAY GIRL -->
 <section class="screen" id="screen5">
-  <div class="photo-section">
-
-    <div class="chapter">Chapter III</div>
-
-    <div class="photo-frame">
-      <img src="Snapchat-874578704.jpg">
-    </div>
-
-    <div class="photo-caption">
-      Some moments stay forever...
-    </div>
-
-    <br>
-
-    <button class="gold-btn" onclick="nextScreen(6)">
-      One more →
-    </button>
-
+ <div class="card">
+  <h1>🏃‍♀️ Birthday Girl Ko Pakdo!</h1>
+  <p>Chalo madam, mujhe pakad ke dikhao! 😂</p>
+  <div id="catchArea">
+   <button id="runButton" onclick="caughtMe()">Mujhe Pakdo 😜</button>
   </div>
+  <p id="catchResult">Ek baar pakadna hai! 🤭</p>
+  <button id="catchNext" hidden onclick="nextScreen(6)">
+   Next Surprise ❤️
+  </button>
+ </div>
 </section>
 
-
-<!-- PHOTO 4 -->
+<!-- 6. FUNNY QUESTION -->
 <section class="screen" id="screen6">
-  <div class="photo-section">
+ <div class="card">
+  <h1>Ek Chhota Sa Sawal 😂</h1>
+  <p>Agar cake ka last piece bache toh kya karogi? 🎂</p>
 
-    <div class="chapter">Chapter IV</div>
-
-    <div class="photo-frame">
-      <img src="Screenshot_20261001_092059.jpg">
-    </div>
-
-    <div class="photo-caption">
-      And this one too... 🧿
-    </div>
-
-    <br>
-
-    <button class="gold-btn" onclick="nextScreen(7)">
-      Read my letter 💌
-    </button>
-
+  <div id="questionOptions">
+   <button class="answer" onclick="answerQuestion(0)">Khud khaungi 😂</button>
+   <button class="answer" onclick="answerQuestion(1)">Share karungi 🫂</button>
+   <button class="answer" onclick="answerQuestion(2)">Chupke se khaungi 🤭</button>
   </div>
+
+  <h2 id="questionResult"></h2>
+  <button id="questionNext" hidden onclick="nextScreen(7)">
+   Agla Surprise 🎁
+  </button>
+ </div>
 </section>
 
-
-<!-- MESSAGE -->
+<!-- 7. CHOOSE YOUR SURPRISE -->
 <section class="screen" id="screen7">
+ <div class="card">
+  <h1>Choose Your Surprise 🎁</h1>
+  <p>Madam, apna surprise choose karo! 🤭❤️</p>
 
-  <div class="letter-box">
-
-    <div class="letter-top">
-      <span>A letter from my heart</span>
-      <h2>For you ❤️</h2>
-    </div>
-
-    <div class="message" id="message"></div>
-
-    <div class="signature">
-      — Always yours 🫂
-    </div>
-
-    <br>
-
-    <div style="text-align:center;">
-      <button class="gold-btn" onclick="nextScreen(8)">
-        One last thing... ✨
-      </button>
-    </div>
-
+  <div id="surpriseOptions">
+   <button class="answer" onclick="chooseSurprise(0)">🍕 Treat Time!</button>
+   <button class="answer" onclick="chooseSurprise(1)">🫂 Friendship Hug!</button>
+   <button class="answer" onclick="chooseSurprise(2)">👑 Special Certificate!</button>
   </div>
 
+  <h2 id="surpriseResult"></h2>
+  <button id="messageNext" hidden onclick="nextScreen(8)">
+   Birthday Letter 💌
+  </button>
+ </div>
 </section>
 
-
-<!-- FINAL -->
+<!-- 8. BIRTHDAY MESSAGE -->
 <section class="screen" id="screen8">
+ <div class="card">
+  <h1>A Message From My Heart ❤️</h1>
 
-  <div class="final-card">
+  <div id="messageText">Hey my all time favourite one 🥺🫂🧿
 
-    <div class="cake">🎂</div>
+You are very special in my life ❤️ 🤌🏼
 
-    <h1>HAPPY BIRTHDAY</h1>
+I know hm daily nhi milte daily bat nhi krte but I miss you always 🥹 teri jagah koi nhi le skta
 
-    <h2>DARLING ♥️ 🧿</h2>
+Or jyda kuch nhi bolna chahti hu bs tu hmesha mere sath rhna 🤌🏼 or hamesha sath dena .....
 
-    <p>
-      May your life always be filled with<br>
-      happiness, peace and beautiful moments. ❤️
-    </p>
+Or sorry yrr 😔 mai tere bure vkt pr tere sath nhi thi us. Vakt mujhe tere sath hona tha 😔 yah bat mujhe hamesha regret feel krati  hai ...
 
-    <br>
+I am very sorry ....
 
-    <p style="font-family:'Dancing Script',cursive;font-size:27px;color:#dfbd82;">
-      LOVE YOU ❤️ BBY 😚
-    </p>
+HAPPY BIRTHDAY 🎂 DARLING ♥️ 🧿 😚 🫂 LOVE YOU ❤️ BBY 🥹🫂❤️
 
-  </div>
+Mai hmesha tere sath rhungi tere hr bure vkt pe tera sath dungi 🫂🫂🫂
 
+Hmesha khus rho meri pgli ❤️🤗🫂 Or aage bdhti rho 👍🏼🫂 .........</div>
+
+  <button onclick="nextScreen(9)">Final Surprise 🎂</button>
+ </div>
 </section>
 
+<!-- 9. FINAL CELEBRATION -->
+<section class="screen" id="screen9">
+ <div class="card">
+  <h1>HAPPY BIRTHDAY! 🎉</h1>
+  <div id="cake">🎂</div>
+  <h2>Happy Birthday, Darling! ❤️🧿</h2>
+  <p>Hamesha khush reh meri pagli! 🫂❤️</p>
+  <div id="confetti">✨ 🎉 💖 🎊 ✨</div>
+  <p>Tu mere liye bahut special hai! 🥹❤️</p>
+  <button onclick="celebrate()">Celebrate Again 🎉</button>
+  <button class="secondary" onclick="nextScreen(1)">Replay Surprise 💌</button>
+ </div>
+</section>
 
 <script>
-
-const messages = [
-`Hey my all time favourite one 🥺🫂🧿`,
-
-`You are very special in my life ❤️ 🤌🏼`,
-
-`I know hm daily nhi milte daily bat nhi krte but I miss you always 🥹 teri jagah koi nhi le skta`,
-
-`Or jyda kuch nhi bolna chahti hu bs tu hmesha mere sath rhna 🤌🏼 or hamesha sath dena .....`,
-
-`Or sorry yrr 😔 mai tere bure vkt pr tere sath nhi thi us. Vakt mujhe tere sath hona tha 😔 yah bat mujhe hamesha regret feel krati  hai ...`,
-
-`I am very sorry ....`,
-
-`HAPPY BIRTHDAY 🎂 DARLING ♥️ 🧿 😚 🫂 LOVE YOU ❤️ BBY 😚`,
-
-`Mai hmesha tere sath rhungi tere hr bure vakt pe tera sath dungi  🫂🫂🫂`
-];
-
-
-function showScreen(number){
-
-  document.querySelectorAll(".screen").forEach(screen=>{
-    screen.classList.remove("active");
-  });
-
-  const selected=document.getElementById("screen"+number);
-
-  if(selected){
-    selected.classList.add("active");
-  }
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-}
-
-
-function openLetter(){
-
-  showScreen(2);
-
-}
-
-
-function openEnvelope(){
-
-  const envelope=document.getElementById("envelope");
-
-  envelope.classList.add("open");
-
-  setTimeout(()=>{
-    showScreen(3);
-  },1200);
-
-}
-
-
 function nextScreen(number){
+ document.querySelectorAll(".screen").forEach(function(screen){
+  screen.classList.remove("active");
+ });
 
-  showScreen(number);
+ document.getElementById("screen"+number).classList.add("active");
 
-  if(number===7){
-    showMessage();
-  }
+ if(number===5) resetCatchGame();
+ if(number===6) resetQuestion();
+ if(number===7) resetSurprise();
+ if(number===9) celebrate();
 
-  if(number===8){
-    createHearts();
-  }
-
+ window.scrollTo(0,0);
 }
 
+/* GAME 1: CATCH THE BIRTHDAY GIRL */
+const runButton=document.getElementById("runButton");
+const catchArea=document.getElementById("catchArea");
+let caught=false;
 
-function showMessage(){
+function moveButton(){
+ const maxX=Math.max(0,catchArea.clientWidth-runButton.offsetWidth);
+ const maxY=Math.max(0,catchArea.clientHeight-runButton.offsetHeight);
 
-  const box=document.getElementById("message");
-
-  box.innerHTML="";
-
-  messages.forEach((text,index)=>{
-
-    const line=document.createElement("div");
-
-    line.className="message-line";
-
-    line.style.animationDelay=(index*0.35)+"s";
-
-    line.textContent=text;
-
-    box.appendChild(line);
-
-  });
-
+ runButton.style.left=Math.floor(Math.random()*(maxX+1))+"px";
+ runButton.style.top=Math.floor(Math.random()*(maxY+1))+"px";
 }
 
-
-function createHearts(){
-
-  for(let i=0;i<22;i++){
-
-    setTimeout(()=>{
-
-      const heart=document.createElement("div");
-
-      heart.className="heart";
-
-      const symbols=["❤️","♥️","🧿","✨","🤍"];
-
-      heart.textContent=
-        symbols[Math.floor(Math.random()*symbols.length)];
-
-      heart.style.left=
-        Math.random()*100+"vw";
-
-      heart.style.animationDuration=
-        (4+Math.random()*3)+"s";
-
-      heart.style.fontSize=
-        (15+Math.random()*20)+"px";
-
-      document.body.appendChild(heart);
-
-      setTimeout(()=>{
-        heart.remove();
-      },7000);
-
-    },i*180);
-
-  }
-
+function resetCatchGame(){
+ caught=false;
+ runButton.disabled=false;
+ runButton.textContent="Mujhe Pakdo 😜";
+ runButton.style.left="30%";
+ runButton.style.top="40%";
+ document.getElementById("catchResult").textContent="Ek baar pakadna hai! 🤭";
+ document.getElementById("catchNext").hidden=true;
 }
 
+runButton.addEventListener("pointerenter",function(){
+ if(!caught) moveButton();
+});
+
+function caughtMe(){
+ if(caught) return;
+ caught=true;
+ runButton.disabled=true;
+ runButton.textContent="Pakad liya! 😂";
+
+ document.getElementById("catchResult").textContent=
+ "Yayyy! Aakhir pakad hi liya! 😂❤️";
+
+ document.getElementById("catchNext").hidden=false;
+}
+
+/* GAME 2: FUNNY QUESTION */
+function resetQuestion(){
+ document.getElementById("questionOptions").hidden=false;
+ document.getElementById("questionResult").textContent="";
+ document.getElementById("questionNext").hidden=true;
+
+ document.querySelectorAll("#questionOptions button").forEach(function(b){
+  b.disabled=false;
+ });
+}
+
+function answerQuestion(index){
+ const replies=[
+  "Hahaha! Cake lover pakdi gayi! 😂🎂",
+  "Awww, kitni sweet ho! 🫂❤️",
+  "Chupke se cake khane wali madam! 🤭😂"
+ ];
+
+ document.getElementById("questionResult").textContent=replies[index];
+ document.getElementById("questionOptions").hidden=true;
+ document.getElementById("questionNext").hidden=false;
+}
+
+/* GAME 3: CHOOSE YOUR SURPRISE */
+function resetSurprise(){
+ document.getElementById("surpriseOptions").hidden=false;
+ document.getElementById("surpriseResult").textContent="";
+ document.getElementById("messageNext").hidden=true;
+
+ document.querySelectorAll("#surpriseOptions button").forEach(function(b){
+  b.disabled=false;
+ });
+}
+
+function chooseSurprise(index){
+ const messages=[
+  "Treat toh banti hai madam! 🍕😂",
+  "Lo ek virtual friendship hug! 🫂❤️",
+  "🏆 Officially meri favourite person! 👑💖"
+ ];
+
+ document.getElementById("surpriseResult").textContent=messages[index];
+ document.getElementById("surpriseOptions").hidden=true;
+ document.getElementById("messageNext").hidden=false;
+}
+
+/* FINAL CELEBRATION */
+function celebrate(){
+ document.getElementById("confetti").textContent="🎉 ✨ 💖 🎊 🎂 🥳 ✨";
+
+ for(let i=0;i<12;i++){
+  const heart=document.createElement("div");
+  heart.className="heart";
+  heart.textContent=["❤️","💖","✨","🎉"][Math.floor(Math.random()*4)];
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.animationDuration=(3+Math.random()*3)+"s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(function(){
+   heart.remove();
+  },6500);
+ }
+}
 </script>
 
 </body>
-            </html>
+</html>
